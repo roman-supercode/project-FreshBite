@@ -18,7 +18,18 @@ export const getAllProducts = async (req, res) => {
 
 // POST
 export const addProduct = async (req, res) => {
-    const item = req.body;
+    const item = {
+        name: req.body.name,
+        category: req.body.category,
+        price: Number(req.body.price),
+        description: req.body.description,
+        origin: req.body.origin,
+        quantity: Number(req.body.quantity),
+        rating: Number(req.body.rating),
+        url: req.body.url,
+    };
+
+    console.log(item);
 
     try {
         const db = await connectDB();
