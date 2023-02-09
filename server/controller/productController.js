@@ -27,6 +27,7 @@ export const addProduct = async (req, res) => {
         quantity: Number(req.body.quantity),
         rating: Number(req.body.rating),
         url: req.body.url,
+        unit: req.body.unit
     };
 
     console.log(item);
