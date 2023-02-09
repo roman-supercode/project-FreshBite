@@ -1,42 +1,75 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRef, useState } from "react";
 import { useFetch } from '../hooks/useFetch';
 
-// styles
-/* import './Create.css'; */
 
 const Create = () => {
 
+    const nameRef = useRef();
+    const catRef = useRef();
+    const fileRef = useRef();
+    const priceRef = useRef();
+    const descRef = useRef();
+    const originRef = useRef();
+    const quanRef = useRef();
+    const ratingRef = useRef();
 
-    /*  const navigate = useNavigate(); */
 
-    const { postData, data } = useFetch("https://furniture-server-production.up.railway.app/api/furniture", "POST");
+    // const { postData, data } = useFetch("https://furniture-server-production.up.railway.app/api/furniture", "POST");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const form = new FormData(e.target);
-        postData(form);
 
+        const file = fileRef.current.files[0];
+
+        const fileForm = new FormData();
+        fileForm.append("file", file);
+        fileForm.append('upload_preset', 'gxvi0yf0');
+
+        const response = await fetch('https://api.cloudinary.com/v1_1/dxiwysn1u/image/upload', {
+            method: 'POST',
+            body: fileForm
+        });
+
+        const data = await response.json();
+        console.log(data);
+
+        const item = {
+            name: nameRef.current.value,
+            category: catRef.current.value,
+            price: priceRef.current.value,
+            description: descRef.current.value,
+            origin: originRef.current.value,
+            quantity: quanRef.current.value,
+            rating: ratingRef.current.value,
+            url: data.secure_url,
+        };
+
+        console.log(item);
+
+
+        const backendResponse = await fetch("https://grosshop-server.up.railway.app/api/v1/add", {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        });
 
 
     };
 
-    /*    useEffect(() => {
-           if (data) {
-               navigate('/');
-           }
-       }, [data]);
-    */
+
     return (
         <div className='create' >
             <h2 className='page-title' >Add a new Prodcut</h2>
-            <form onSubmit={handleSubmit} >
+            <form className="form">
                 <label>
-                    <span>Title</span>
+                    <span>Name</span>
                     <input
                         type="text"
                         name="title"
                         required
+                        ref={nameRef}
                     />
                 </label>
                 <label>
@@ -45,13 +78,41 @@ const Create = () => {
                         name="price"
                         type="number"
                         required
+                        ref={priceRef}
+                    />
+                </label>
+                <label>
+                    <span>Origin</span>
+                    <input
+                        name="origin"
+                        type="text"
+                        required
+                        ref={originRef}
+                    />
+                </label>
+                <label>
+                    <span>quantity</span>
+                    <input
+                        name="quantity"
+                        type="text"
+                        required
+                        ref={quanRef}
+                    />
+                </label>
+                <label>
+                    <span>Rating</span>
+                    <input
+                        name="rating"
+                        type="text"
+                        required
+                        ref={ratingRef}
                     />
                 </label>
                 <label>
                 </label>
                 <label>
                     <span>Category</span>
-                    <select name="category">
+                    <select name="category" ref={catRef}>
                         <option name="category" value="seafood">Seafood</option>
                         <option name="category" value="fruit">Fruits</option>
                         <option name="category" value="meat">Meat</option>
@@ -70,15 +131,17 @@ const Create = () => {
                 <input
                     type="file"
                     name="image"
+                    ref={fileRef}
                 />
                 <label>
                     <span>Description</span>
                     <textarea
                         name="text"
                         required
+                        ref={descRef}
                     />
                 </label>
-                <button className='btn' >submit</button>
+                <button className='btn' onClick={handleSubmit}>submit</button>
             </form>
         </div >
     );
