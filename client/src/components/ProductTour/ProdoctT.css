@@ -76,6 +76,13 @@
     z-index: 1;
     margin: 1rem;
 }
+.routeLink{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
 
 .Afb:hover {
     transition: 1s;
@@ -135,7 +142,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top: 15rem;
+    top: 10rem;
     animation-fill-mode: forwards;
     animation: logoMove 3s linear;
 }
@@ -146,7 +153,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top: 15rem;
+    top: 10rem;
 }
 
 @keyframes logoMove {
@@ -229,8 +236,21 @@
     95% {
         top: 14rem;
     }
+    95% {
+        top: 15rem;
+    }
+    95% {
+        top: 14rem;
+    }
+    95% {
+        top: 12rem;
+    }
+    95% {
+        top: 11rem;
+    }
+
 
     100% {
-        top: 15rem;
+        top: 10rem;
     }
 }
