@@ -1,0 +1,87 @@
+.FilterBtn {
+    width: 80%;
+    height: 3rem;
+
+
+}
+
+
+.sale {
+    width: 80%;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 2rem;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    flex-direction: column;
+}
+
+.TGDeals {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+}
+
+
+.ueberschreift {
+    width: 97.5%;
+    text-align: left;
+    border: solid .1rem lightgray;
+
+}
+
+.TodayGroceryDealsCards {
+    width: 13rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(222, 222, 222, 0.38);
+    border: solid .1rem lightgray;
+}
+
+.cardBilderContainer {
+    width: 100%;
+}
+
+.cardBilder {
+    display: flex;
+    height: 5rem;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin: .5rem auto;
+}
+
+.PriceRating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.name {
+    text-align: center;
+}
+.pommes{
+    display: block;
+    width: 97%;
+    margin: .5rem auto;
+}
+.GroceryMemberDealsCards {
+    width: 13rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(222, 222, 222, 0.38);
+    border: solid .1rem lightgray;
+}
