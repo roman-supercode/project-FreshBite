@@ -16,7 +16,9 @@ const Filter = () => {
             setProducts(products);
         };
         fetchProducts();
+
     }, []);
+    console.log(products[4]);
 
     //duplicate aus category entfernen
     const dupcat = [...new Map(products.map((p) => [p.category]))];
@@ -40,7 +42,7 @@ const Filter = () => {
     });
 
     const bread = products.filter(item => {
-        return item.category === "vegetable";
+        return item.category === "bread";
     });
 
     const organic = products.filter(item => {
