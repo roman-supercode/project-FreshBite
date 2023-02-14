@@ -1,15 +1,16 @@
-import { MongoClient } from "mongodb";
+import mongoose from "mongoose";
 
-const url = process.env.MONGO_URL;
-const database = process.env.DB;
+const connectDB = (url) => {
+    // aktiviert die strenge Überprüfung von Abfragen in Mongoose.
+    // heißt: wenn Felder abgefragt werden, die nicht im dem Schema stehen,
+    // wird ein Error ausgelöst.
+    mongoose.set('strictQuery', true);
 
-const client = new MongoClient(url);
-
-let db;
-
-export const connectDB = async () => {
-    if (db) return db;
-    await client.connect();
-    db = client.db(database);
-    return db;
+    mongoose.connect(url)
+        .then(() => console.log('Connected to MongoDB'))
+        .catch((err) => {
+            console.error('failed to connect with mongo', err);
+        });
 };
+
+export default connectDB;

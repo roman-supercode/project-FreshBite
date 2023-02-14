@@ -1,43 +1,30 @@
-import { connectDB } from "../db/connect.js";
-import mongodb from "mongodb";
-
+// import { connectDB } from "../db/connect.js";
+// import mongodb from "mongodb";
+import Product from "../models/Product.js";
 
 // GET
 export const getAllProducts = async (req, res) => {
-
-    try {
-        const db = await connectDB();
-        const result = await db.collection("products").find().toArray();
-        res.status(200).json(result);
-
-    } catch (error) {
-        console.log(error);
-        res.status(400).json("Something wrong with GET Route", error);
-    }
+  try {
+    // rufe alle Produkte aus der DB
+    const allProducts = await Product.find();
+    // Sende die Produkte als JSON an den Client zurück, mit dem HTTP-Statuscode 200 (OK).
+    res.status(200).json(allProducts);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json("Something wrong with GET Route", error);
+  }
 };
 
 // POST
 export const addProduct = async (req, res) => {
-    const item = {
-        name: req.body.name,
-        category: req.body.category,
-        price: Number(req.body.price),
-        description: req.body.description,
-        origin: req.body.origin,
-        quantity: Number(req.body.quantity),
-        rating: Number(req.body.rating),
-        url: req.body.url,
-        unit: req.body.unit
-    };
+  // console.log(req.body);
 
-    console.log(item);
-
-    try {
-        const db = await connectDB();
-        const result = await db.collection("products").insertOne(item);
-        res.status(200).json(result);
-    } catch (error) {
-        console.log(error);
-        res.status(400).json("Something wrong with POST Route", error);
-    }
+  try {
+    // erstelle ein neues Produkt mit den Daten aus dem Anfragekörper
+    const newProduct = await Product.create(req.body);
+    res.status(200).json(newProduct);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json("Something wrong with POST Route");
+  }
 };

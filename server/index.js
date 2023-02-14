@@ -2,11 +2,10 @@ import "./config/config.js";
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import multer from "multer";
-import { addProduct, getAllProducts } from "./controller/productController.js";
 
-const upload = multer();
-
+import authRouter from "./routes/authRoutes.js";
+import productRouter from "./routes/productRoutes.js";
+import connectDB from "./db/connect.js";
 
 const PORT = process.env.PORT;
 
@@ -17,15 +16,28 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
 
+// POST - REGISTER
+app.use("/api/v1/auth", authRouter);
+// POST - LOGIN
+app.use("/api/v1/login", authRouter);
+
+// GET/POST für PRODUCTS
+app.use("/api/v1/products", productRouter);
+
 // test route
 app.get("/", async (req, res) => {
-    res.send("Hello from the Server!");
+  res.send("Hello from the Server!");
 });
 
-// GET - ALL
-app.get("/api/v1/products", getAllProducts);
+const start = async () => {
+  try {
+    await connectDB(process.env.MONGO_URL);
+    app.listen(PORT, () => {
+      console.log("Server ist listening on PORT:", PORT);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-// POST - ADD
-app.post("/api/v1/add", upload.none(), addProduct);
-
-app.listen(PORT, () => console.log("Server is listening on PORT", PORT));
+start();
