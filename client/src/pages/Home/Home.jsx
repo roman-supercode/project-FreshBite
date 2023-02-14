@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div className="HomePage">
       <span className="head">
-        <Link className="routeLink" to="/filterpage">
+        <Link className="routeLink" to="/filterpage2">
           {" "}
           <button className="FilterBtn">
             {" "}
@@ -79,12 +79,12 @@ const Home = () => {
                 <img className="cardBilder" src={datas.url} alt="Bild"></img>
               </span>
               <span className="name">
-                <p>{datas.name}</p>{" "}
+                <p>{datas.name}</p>
               </span>
               <span className="PriceRating">
                 <p className="oldPrice">{datas.price}$ </p>
                 <p className="salePrice"> {Math.floor(datas.price) / 2}$</p>
-                <p>⭐️{datas.rating}</p>{" "}
+                <p>⭐️{datas.rating}</p>
               </span>
             </div>
           );
