@@ -1,0 +1,102 @@
+.obenC{
+    border: solid .5px gray;
+    display: flex;
+    width: 100%;
+}
+
+.back {
+    width: min-content;
+margin-right: 3rem;
+
+}
+.GDeals{
+    align-self: center;
+    width: 100%;
+}
+.pfeil{
+  text-align: left;
+  width:min-content;
+  align-self: flex-start;
+}
+.detailCard{
+width: 90%;
+gap: 1rem;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+border: solid 1px gray;
+padding:  0 5%;
+
+}
+.DetailPPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.detailCard img{
+    width: 35rem;
+    border-radius: 2.5rem;
+}
+.UNIT{
+    padding: 1rem 3rem;
+    font-size: 25pt;
+    background-color:rgb(64, 170, 84) ;
+    border-radius: 1.5rem;
+    color: white;
+}
+.PRICE{
+    font-size: 40pt;
+    text-align: center;
+}
+.NameAndRating{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+}
+.THINGnAME{
+    text-align: center;
+    font-size: 25pt;
+}
+.RATING{
+    text-align: center;
+    font-size: 20pt;
+    font-weight: 700;
+    color: rgb(110, 108, 108);
+}
+
+.Quantity{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.Q{
+color: rgb(113, 110, 110);
+}
+
+.PMBTN{
+    height: 5rem;
+    width: 5rem;
+    padding: 3rem;
+    font-size: 30pt;
+    font-weight: bolder;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+cursor: progress;
+}
+
+.Rechner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5rem;
+}

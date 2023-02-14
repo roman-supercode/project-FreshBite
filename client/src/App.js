@@ -26,7 +26,7 @@ function App() {
           <Route path="/filterpage2" element={<FilterPage2 />} />
           <Route path="/filtered" element={<Filtered />} />
 
-          <Route path="/item/:id" element={<ProductDetail />} />
+          <Route path="/item/" element={<ProductDetail />} />
           <Route path="/card" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/order-history" element={<OrderHistory />} />

@@ -76,13 +76,7 @@
     z-index: 1;
     margin: 1rem;
 }
-.routeLink{
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+
 
 .Afb:hover {
     transition: 1s;

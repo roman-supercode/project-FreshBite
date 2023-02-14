@@ -30,11 +30,10 @@ const Home = () => {
     <div className="HomePage">
       <span className="head">
         <Link className="routeLink" to="/filterpage2">
-          {" "}
           <button className="FilterBtn">
-            {" "}
-            <h1 className="fl"> Filter</h1>{" "}
-          </button>{" "}
+            
+            <h1 className="fl"> Filter</h1>
+          </button>
         </Link>
         <div className="carousel">
           <div className="carousel-item">
@@ -51,18 +50,18 @@ const Home = () => {
 
         {randomSelection.map((datas, i) => {
           return (
-            <div className="TodayGroceryDealsCards" key={i}>
+            <Link state={datas} to={`/item/`} className="TodayGroceryDealsCards" key={i} >
               <span className="cardBilderContainer">
                 <img className="cardBilder" src={datas.url} alt="Bild"></img>
               </span>
               <span className="name">
-                <p>{datas.name}</p>{" "}
+                <p>{datas.name}</p>
               </span>
               <span className="PriceRating">
                 <p>{datas.price}$</p>
-                <p>⭐️{datas.rating}</p>{" "}
+                <p>⭐️{datas.rating}</p>
               </span>
-            </div>
+            </Link>
           );
         })}
         <span></span>
@@ -74,7 +73,7 @@ const Home = () => {
 
         {randomSelection2.map((datas, i) => {
           return (
-            <div className="GroceryMemberDealsCards" key={i}>
+            <Link state={datas} to={"/item/"} className="GroceryMemberDealsCards" key={i}>
               <span className="cardBilderContainer">
                 <img className="cardBilder" src={datas.url} alt="Bild"></img>
               </span>
@@ -86,7 +85,7 @@ const Home = () => {
                 <p className="salePrice"> {Math.floor(datas.price) / 2}$</p>
                 <p>⭐️{datas.rating}</p>
               </span>
-            </div>
+            </Link>
           );
         })}
         <span></span>
