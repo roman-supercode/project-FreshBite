@@ -1,5 +1,5 @@
 .profileContainer {
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
 }
 
 .topSection {
@@ -13,7 +13,7 @@
 .profile {
   width: 150px;
   height: 150px;
-  margin: 3rem auto;
+  margin: 2rem auto;
   border-radius: 50%;
   border: 5px solid #40aa54;
   background-image: url("../../assets/profile-pic.jpg");
@@ -39,11 +39,11 @@
 .fix {
   margin-bottom: 0.5rem;
   color: #777777;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .variabel {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 article {
@@ -60,4 +60,10 @@ article {
   cursor: pointer;
   display: block;
   margin: 4rem auto;
+}
+
+.topDiv {
+  display: flex;
+  gap: 10px;
+  padding: 1rem 0.5rem;
 }
