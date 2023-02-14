@@ -1,154 +1,156 @@
-
-
 .FilterBtn {
-    margin: 1rem;
-    width: 80%;
-    height: 5rem;
-border-radius: 1rem;
-background-image: url(../../img/sorti.png); 
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-filter: grayscale(75%);
-transition: 2s;
-
+  margin: 1rem;
+  width: 80%;
+  height: 5rem;
+  border-radius: 1rem;
+  background-image: url(../../img/sorti.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(75%);
+  transition: 2s;
 }
- .fl{
-    font-family: monospace;
-    width: 100%;
-    height: auto;
-    font-size: 58pt;
-    color: transparent;
-    -webkit-text-stroke-width: 4.5px;
-    color: rgb(86, 220, 33);
-    -webkit-text-stroke-color: rgb(0, 0, 0);
-    transition: 2s;
-
+.fl {
+  font-family: monospace;
+  width: 100%;
+  height: auto;
+  font-size: 58pt;
+  color: transparent;
+  -webkit-text-stroke-width: 4.5px;
+  color: rgb(86, 220, 33);
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  transition: 2s;
 }
-.FilterBtn:hover{
-    transition: 2s;
-filter: grayscale(0);
+.FilterBtn:hover {
+  transition: 2s;
+  filter: grayscale(0);
 }
-.FilterBtn:hover .fl{
-opacity: .5;
-transition: 2s;
+.FilterBtn:hover .fl {
+  opacity: 0.5;
+  transition: 2s;
+}
 
-    }
-
- .sale {
-    width: 80%;
-    display: block;
-    margin: 1rem auto;
-    border-radius: 2rem;
-} 
+.sale {
+  width: 80%;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 2rem;
+}
 
 .head {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+  flex-direction: column;
 }
 
 .TGDeals {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
-
 .ueberschreift {
-    width: 97.5%;
-    text-align: left;
-    border: solid .1rem lightgray;
-
+  width: 97.5%;
+  text-align: left;
+  border: solid 0.1rem lightgray;
 }
 
 .TodayGroceryDealsCards {
-    width: 13rem;
-    height: 11rem;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.38);
-    border: solid .1rem lightgray;
-    font-size: 15pt;
-    font-weight: 600;
+  width: 13rem;
+  height: 11rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.38);
+  border: solid 0.1rem lightgray;
+  font-size: 15pt;
+  font-weight: 600;
 }
 
 .cardBilderContainer {
-    width: 100%;
+  width: 100%;
 }
 
 .cardBilder {
-    display: flex;
-    height: 5rem;
-    width: 5rem;
-    object-fit: contain;
-    border-radius: 2rem;
-    justify-content: center;
-    align-items: center;
-    margin: .5rem auto;
+  display: flex;
+  height: 5rem;
+  width: 5rem;
+  object-fit: contain;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem auto;
 }
 
 .PriceRating {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1rem;
 }
 
 .name {
-    text-align: center;
+  text-align: center;
 }
-.pommes{
-    display: block;
-    width: 97%;
-    margin: .5rem auto;
+.pommes {
+  display: block;
+  width: 97%;
+  margin: 0.5rem auto;
 }
 .GroceryMemberDealsCards {
-    width: 13rem;
-    height: 11rem;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.38);
-    border: solid .1rem lightgray;
-    font-size: 15pt;
-    font-weight: 600;
+  width: 13rem;
+  height: 11rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.38);
+  border: solid 0.1rem lightgray;
+  font-size: 15pt;
+  font-weight: 600;
 }
-.oldPrice{
-    text-decoration: line-through;
-    color: rgb(156, 23, 23);
+.oldPrice {
+  text-decoration: line-through;
+  color: rgb(156, 23, 23);
 }
-.salePrice{
-    color: rgb(43, 156, 23);
+.salePrice {
+  color: rgb(43, 156, 23);
 }
 
 .carousel {
-    width: 100%;
-    height: 21rem;
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  height: 21rem;
+  overflow: hidden;
+  position: relative;
+}
+.carousel-item {
+  width: 100%;
+  position: absolute;
+  top: 0rem;
+  left: 100%;
+  animation: 12s autoplay infinite;
+}
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+@keyframes autoplay {
+  0% {
+    left: 100%;
   }
-  .carousel-item {
-    width: 100%;
-    position: absolute;
-    top: 0rem;
-    left: 100;
-    animation: 12s autoplay infinite ;
+  50% {
+    left: 0%;
   }
-  .carousel-item img {
-    width: 100%;
-    height: auto;
+  100% {
+    left: -100%;
   }
-  @keyframes autoplay {
-    0% {left: 100%}
-    50% {left: 0%}
-    100% {left: -100%}
-  }
-  .carousel-item:nth-child(1) {animation-delay: 0s}
-  .carousel-item:nth-child(2) {animation-delay: 6s}
+}
+.carousel-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.carousel-item:nth-child(2) {
+  animation-delay: 6s;
+}
