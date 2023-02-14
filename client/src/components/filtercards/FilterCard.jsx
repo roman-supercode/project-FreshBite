@@ -1,16 +1,20 @@
 
-
-//styles
 import './FilterCard.css';
 
 function FilterCard({ item }) {
   return (
-    <div>
-      <img src={item.url} alt="product image" />
-      <h1>{item.name}</h1>
-      <p>{item.price}€</p>
-      <p>{item.rating}⭐</p>
-    </div>
+    <div className="TodayGroceryDealsCards">
+    <span className="cardBilderContainer">
+      <img className="cardBilder" src={item.url} alt="Bild"></img>
+    </span>
+    <span className="name">
+      <p>{item.name}</p>
+    </span>
+    <span className="PriceRating">
+      <p>{item.price}$</p>
+      <p>⭐️{item.rating}</p>
+    </span>
+  </div>
   );
 }
 

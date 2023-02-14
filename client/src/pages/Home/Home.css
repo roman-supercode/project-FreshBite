@@ -77,14 +77,14 @@
 }
 
 .cardBilder {
-  display: flex;
-  height: 5rem;
-  width: 5rem;
-  object-fit: contain;
-  border-radius: 2rem;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5rem auto;
+    display: flex;
+    height: 6rem;
+    width: 7rem;
+    object-fit: contain;
+    border-radius: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem auto;
 }
 
 .PriceRating {
