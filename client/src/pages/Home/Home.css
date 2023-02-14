@@ -70,6 +70,8 @@
   border: solid 0.1rem lightgray;
   font-size: 15pt;
   font-weight: 600;
+  text-decoration: none;
+  color: black;
 }
 
 .cardBilderContainer {
@@ -111,6 +113,8 @@
   border: solid 0.1rem lightgray;
   font-size: 15pt;
   font-weight: 600;
+  text-decoration: none;
+  color: black;
 }
 .oldPrice {
   text-decoration: line-through;
