@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from '../fetchData';
 import { Link, useNavigate } from 'react-router-dom';
+import MultiRangeSlider from "multi-range-slider-react";
+
+import './Slider.css';
 
 
 
@@ -23,13 +26,16 @@ const Filter = () => {
     const updatecat = [...new Map(dupcat.map((i) => i))];
 
     const [categoryFilter, setCategoryFilter] = useState('');
-    const [priceFilter, setPriceFilter] = useState(0);
+    const [minValue, set_minValue] = useState(2);
+    const [maxValue, set_maxValue] = useState(15);
     const [sortOrder, setSortOrder] = useState('');
 
-    const apply = (event, value) => {
+    const apply = (event) => {
         setCategoryFilter(event.target.value);
-        setPriceFilter(value);
+        //setPriceFilter(value);
         setSortOrder(event.target.value);
+        set_minValue(event.minValue);
+        set_maxValue(event.maxValue);
 
 
         navigate(`/filtered`, { state: filteredProducts });
@@ -43,10 +49,10 @@ const Filter = () => {
             return product.category === categoryFilter;
         })
         .filter((product) => {
-            if (priceFilter === 0) {
+            if (minValue && maxValue === 0) {
                 return true;
             }
-            return product.price <= priceFilter;
+            return product.price <= maxValue && product.price >= minValue;
         })
         .sort((a, b) => {
             if (sortOrder === 'lowest') {
@@ -71,25 +77,24 @@ const Filter = () => {
                     })
                 }
             </div>
-            <p>Min {priceFilter[0]}</p>
-            <input
-                type="range"
-                min="0"
-                max="15"
-                step="0.1"
-                value={priceFilter[0]}
-                onChange={e => setPriceFilter(e.target.value)}
-            />
-            <p>Max {priceFilter[1]}</p>
-            <input
-                type="range"
-                min="0"
-                max="15"
-                step="0.1"
-                value={priceFilter[1]}
-                onChange={e => setPriceFilter(e.target.value)}
-            />
-            <select value={sortOrder} onClick={e => setSortOrder(e.target.value)}>
+            <div>
+                <div className="range">
+                    <MultiRangeSlider
+                        min={2}
+                        max={16}
+                        step={1}
+                        minValue={minValue}
+                        maxValue={maxValue}
+                        barInnerColor="rgb(19, 209, 187)"
+                        onInput={(e) => {
+                            apply(e);
+                        }}
+                    />
+                    <h1>minValue: {minValue}</h1>
+                    <h1>maxValue: {maxValue}</h1>
+                </div>
+            </div>
+            <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
                 <option value="">Sort By</option>
                 <option value="lowest">Lowest Price</option>
                 <option value="highest">Highest Price</option>
@@ -104,3 +109,18 @@ const Filter = () => {
 };
 
 export default Filter;
+
+
+
+
+
+
+{/* <p>Min {priceFilter}</p>
+<input
+    type="range"
+    min="0"
+    max="15"
+    step="0.1"
+    value={priceFilter}
+    onChange={e => setPriceFilter(e.target.value)}
+/> */}
