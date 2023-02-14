@@ -17,7 +17,7 @@ export const NavBar = ({ page }) => {
             <Link to="/home">
                 <img className="navLinkToHome" alt="home button" src={page !== "home" ? homeUnclicked : homeClicked} />
             </Link>
-            <Link to="/orders">
+            <Link to="/order-history">
                 <img className="navLinkToOrders" alt="orders button" src={page !== "orders" ? ordersUnclicked : ordersClicked} />
             </Link>
             {/* WARENKORB */}
@@ -28,7 +28,7 @@ export const NavBar = ({ page }) => {
             <Link to="/wishlist">
                 <img className="navLinkToWishlist" alt="wishlist button" src={page !== "wishlist" ? wishlistUnclicked : wishlistClicked} />
             </Link>
-            <Link to="/profile">
+            <Link to="/profile/xy">
                 <img className="navLinkToProfile" alt="profile button" src={page !== "profile" ? profileUnclicked : profileClicked} />
             </Link>
 
