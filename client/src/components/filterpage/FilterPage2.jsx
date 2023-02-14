@@ -37,7 +37,7 @@ const Filter = () => {
         set_minValue(event.minValue);
         set_maxValue(event.maxValue);
 
-
+        console.log(set_minValue);
         navigate(`/filtered`, { state: filteredProducts });
     };
 
@@ -64,46 +64,58 @@ const Filter = () => {
             }
         });
 
+    const handleClear = () => {
+        setCategoryFilter('');
+        set_minValue(2);
+        set_maxValue(15);
+        setSortOrder('');
+    };
+
+
+
     return (
-        <div>
+        <main>
+            <button onClick={handleClear} >Clear Filter</button>
             <div>
-                {
-                    updatecat.map((item, index) => {
-                        return (
-                            <button onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
-                                {item[0]}
-                            </button>
-                        );
-                    })
-                }
-            </div>
-            <div>
-                <div className="range">
-                    <MultiRangeSlider
-                        min={2}
-                        max={16}
-                        step={1}
-                        minValue={minValue}
-                        maxValue={maxValue}
-                        barInnerColor="rgb(19, 209, 187)"
-                        onInput={(e) => {
-                            apply(e);
-                        }}
-                    />
-                    <h1>minValue: {minValue}</h1>
-                    <h1>maxValue: {maxValue}</h1>
+                <div>
+                    {
+                        updatecat.map((item, index) => {
+                            return (
+                                <button onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
+                                    {item[0]}
+                                </button>
+                            );
+                        })
+                    }
+                </div>
+                <div>
+                    <div className="range">
+                        <MultiRangeSlider
+                            //min={2}
+                            //max={16}
+                            step={1}
+                            minValue={minValue}
+                            maxValue={maxValue}
+                            barInnerColor="rgb(19, 209, 187)"
+                            onInput={(e) => {
+                                apply(e);
+                            }}
+                        />
+                        <h1>minValue: {minValue}</h1>
+                        <h1>maxValue: {maxValue}</h1>
+                    </div>
+                </div>
+                <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
+                    <option value="">Sort By</option>
+                    <option value="lowest">Lowest Price</option>
+                    <option value="highest">Highest Price</option>
+                    <option value="best">Best Rating</option>
+                </select>
+                <div>
+                    <button onClick={apply} type="submit" >Apply</button>
                 </div>
             </div>
-            <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
-                <option value="">Sort By</option>
-                <option value="lowest">Lowest Price</option>
-                <option value="highest">Highest Price</option>
-                <option value="best">Best Rating</option>
-            </select>
-            <div>
-                <button onClick={apply} type="submit" >Apply</button>
-            </div>
-        </div>
+        </main>
 
     );
 };

@@ -13,7 +13,9 @@ import Cart from "./pages/Cart/Cart";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import OrderHistory from "./pages/OrderHistory/OrderHistory";
 import Profile from "./pages/Profile/Profile";
+import Filter from "./components/filter/Filter";
 import { NavBar } from "./components/NavBar/NavBar";
+
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/" element={<ProdoctTour />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/create" element={<Create />} />
+          <Route path="/filter" element={<Filter />} />
+
 
           <Route path="/filterpage2" element={<FilterPage2 />} />
           <Route path="/filtered" element={<Filtered />} />
