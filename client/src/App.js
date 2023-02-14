@@ -6,8 +6,9 @@ import Create from './components/Create';
 import Filtered from './components/filterpage/filtered';
 
 import FilterPage2 from './components/filterpage/FilterPage2';
-import Home from "./pages/Home/Home"
-import ProdoctTour from "./components/ProductTour/ProdoctTour"
+import Home from "./pages/Home/Home";
+import ProdoctTour from "./components/ProductTour/ProdoctTour";
+
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<ProdoctTour />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/create" element={<Create />} />
+
 
           <Route path="/filterpage2" element={<FilterPage2 />} />
           <Route path="/filtered" element={<Filtered />} />
