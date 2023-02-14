@@ -9,9 +9,9 @@ const Home = () => {
     const randomSelection = [];
     const randomSelection2 = [];
     useEffect(() => {
-        https: fetch("https://freshbite-server.up.railway.app/api/v1/products")
-          .then((response) => response.json())
-          .then((data) => setData(data));
+
+        fetch('https://freshbite-server.up.railway.app/api/v1/products')
+            .then((response) => response.json())
     }, []);
     if (data.length === 0) {
         return;
@@ -92,14 +92,6 @@ const Home = () => {
                 <span>
                 </span>
             </span>
-
-
-
-
-
-
-
-
         </div>
     );
 };
