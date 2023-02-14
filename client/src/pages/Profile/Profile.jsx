@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import "./Profile.css";
-import previous from "../../assets/previous.svg";
 import cameraIcon from "../../assets/camera-icon.svg";
 import GoBackButton from "../../components/GoBack/GoBackButton";
 
@@ -8,10 +6,7 @@ const Profile = () => {
   return (
     <div className="profileContainer">
       <section className="topSection">
-        <div className="goBack">
-          {/* <Link to="/home" className="previousLink">
-            <img src={previous} alt="preveious icon" className="previous" />
-          </Link> */}
+        <div className="topDiv">
           <GoBackButton />
           <h2>Mein Profil</h2>
         </div>
