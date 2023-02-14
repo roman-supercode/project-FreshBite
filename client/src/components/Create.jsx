@@ -48,7 +48,7 @@ const Create = () => {
     console.log(item);
 
     const backendResponse = await fetch(
-      "https://grosshop-server.up.railway.app/api/v1/add",
+      "https://freshbite-server.up.railway.app/api/v1/products",
       {
         method: "POST",
         headers: {

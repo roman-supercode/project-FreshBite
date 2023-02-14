@@ -14,7 +14,7 @@ const Filter = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const products = await fetchData("https://grosshop-server.up.railway.app/api/v1/products");
+            const products = await fetchData("https://freshbite-server.up.railway.app/api/v1/products");
 
             setProducts(products);
         };

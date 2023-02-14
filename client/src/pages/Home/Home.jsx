@@ -9,9 +9,9 @@ const Home = () => {
     const randomSelection = [];
     const randomSelection2 = [];
     useEffect(() => {
-        fetch('https://grosshop-server.up.railway.app/api/v1/products')
-            .then((response) => response.json())
-            .then((data) => setData(data));
+        https: fetch("https://freshbite-server.up.railway.app/api/v1/products")
+          .then((response) => response.json())
+          .then((data) => setData(data));
     }, []);
     if (data.length === 0) {
         return;
