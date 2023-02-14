@@ -1,11 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-import Create from './components/Create';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+// import Create from "./components/Create";
+import { NavBar } from "./components/NavBar/NavBar";
+// import Welcome from "./pages/Welcome";
 
 function App() {
   return (
     <div className="App">
-      <Create />
+      {/* <Welcome /> */}
+      <Router>
+        <NavBar />
+      </Router>
     </div>
   );
 }
