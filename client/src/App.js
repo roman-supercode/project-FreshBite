@@ -16,18 +16,23 @@ import Profile from "./pages/Profile/Profile";
 import Filter from "./components/filter/Filter";
 import { NavBar } from "./components/NavBar/NavBar";
 
-
 function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
         <Routes>
           <Route path="/" element={<ProdoctTour />} />
-          <Route path="/Home" element={<Home />} />
+          <Route
+            path="/Home"
+            element={
+              <>
+                <Home />
+                <NavBar page={"home"} />
+              </>
+            }
+          />
           <Route path="/create" element={<Create />} />
           <Route path="/filter" element={<Filter />} />
-
 
           <Route path="/filterpage2" element={<FilterPage2 />} />
           <Route path="/filtered" element={<Filtered />} />
@@ -35,9 +40,34 @@ function App() {
           <Route path="/item/" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
 
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/order-history" element={<OrderHistory />} />
-          <Route path="/profile/:id" element={<Profile />} />
+          <Route
+            path="/wishlist"
+            element={
+              <>
+                <Wishlist />
+                <NavBar page={"wishlist"} />
+              </>
+            }
+          />
+          <Route
+            path="/order-history"
+            element={
+              <>
+                <OrderHistory />
+                <NavBar page={"order-history"} />
+              </>
+            }
+          />
+
+          <Route
+            path="/profile"
+            element={
+              <>
+                <Profile />
+                <NavBar page={"profile"} />
+              </>
+            }
+          />
         </Routes>
       </Router>
     </div>

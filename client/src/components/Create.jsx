@@ -11,7 +11,6 @@ const Create = () => {
   const ratingRef = useRef();
   const unitRef = useRef();
 
-  // const { postData, data } = useFetch("https://furniture-server-production.up.railway.app/api/furniture", "POST");
 
   const handleSubmit = async (e) => {
     e.preventDefault();

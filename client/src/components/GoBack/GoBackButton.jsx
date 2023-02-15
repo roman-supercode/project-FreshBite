@@ -1,13 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import previous from "../../assets/previous.svg";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
+// import previous from "../../assets/previous.svg";
 import "./GoBackButton.css";
+import { IconContext } from "react-icons/lib";
 
 function GoBackButton() {
   const navigate = useNavigate();
 
   return (
-    <div onClick={() => navigate(-1)} className="goBack">
-      <img src={previous} alt="go back icon" className="goBackImg" />
+    <div onClick={() => navigate(-1)}>
+      <IconContext.Provider value={{ className: "goBackIcon" }}>
+        <IoArrowBackCircleOutline />
+      </IconContext.Provider>
     </div>
   );
 }
