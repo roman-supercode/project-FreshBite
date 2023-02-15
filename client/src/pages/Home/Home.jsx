@@ -28,13 +28,12 @@ const Home = () => {
   }
   return (
     <div className="HomePage">
+
       <span className="head">
-        <Link className="routeLink" to="/filterpage2">
-          <button className="FilterBtn">
-            
-            <h1 className="fl"> Filter</h1>
+
+          <button className="FilterBtn">        <Link className="routeLink filterContainer" to="/filterpage2">  </Link>
           </button>
-        </Link>
+      
         <div className="carousel">
           <div className="carousel-item">
             <img className="sale" src={zwanzigProzent} alt="20% off" />

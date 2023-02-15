@@ -1,48 +1,38 @@
 .FilterBtn {
-  margin: 1rem;
-  width: 80%;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 1rem;
-  background-image: url(../../img/sorti.png);
+  background-image: url(../../img/Filterimg.jpeg);
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  filter: grayscale(75%);
-  transition: 2s;
+  align-self: flex-start;
+
 }
-.fl {
-  font-family: monospace;
-  width: 100%;
-  height: auto;
-  font-size: 58pt;
-  color: transparent;
-  -webkit-text-stroke-width: 4.5px;
-  color: rgb(86, 220, 33);
-  -webkit-text-stroke-color: rgb(0, 0, 0);
-  transition: 2s;
+.filterContainer{
+  display: flex;
+  justify-content: flex-start;
 }
-.FilterBtn:hover {
-  transition: 2s;
-  filter: grayscale(0);
-}
-.FilterBtn:hover .fl {
-  opacity: 0.5;
-  transition: 2s;
+.HomePage{
+  margin-bottom: 6rem;
 }
 
+.top{
+  background-color:  rgb(64, 182, 18);
+  width: 100%;
+  height: 2rem;
+}
 .sale {
   width: 80%;
   display: block;
   margin: 1rem auto;
   border-radius: 2rem;
 }
-
 .head {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin: 1rem;
+  margin: .5rem;
   flex-direction: column;
 }
 
@@ -52,11 +42,12 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 97.5%;
+  margin:  0 auto;
 }
 
 .ueberschreift {
-  width: 97.5%;
+  width: 100%;
   text-align: left;
   border: solid 0.1rem lightgray;
 }
@@ -80,13 +71,13 @@
 
 .cardBilder {
     display: flex;
-    height: 6rem;
+    height: 5rem;
     width: 7rem;
     object-fit: contain;
     border-radius: 2.5rem;
     justify-content: center;
     align-items: center;
-    margin: 0rem auto;
+    margin: 1rem auto 0 auto;
 }
 
 .PriceRating {
@@ -129,6 +120,10 @@
   height: 21rem;
   overflow: hidden;
   position: relative;
+  background-image: url("../../img/sorti.png");
+  background-size: 100% 15.6rem;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .carousel-item {
   width: 100%;
@@ -140,6 +135,7 @@
 .carousel-item img {
   width: 100%;
   height: auto;
+  
 }
 @keyframes autoplay {
   0% {

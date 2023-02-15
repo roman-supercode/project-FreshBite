@@ -1,4 +1,4 @@
-.obenC{
+.obenC {
     border: solid .5px gray;
     display: flex;
     width: 100%;
@@ -6,69 +6,82 @@
 
 .back {
     width: min-content;
-margin-right: 3rem;
+    margin-right: 3rem;
 
 }
-.GDeals{
+
+.GDeals {
     align-self: center;
     width: 100%;
 }
-.pfeil{
-  text-align: left;
-  width:min-content;
-  align-self: flex-start;
-}
-.detailCard{
-width: 90%;
-gap: 1rem;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-border: solid 1px gray;
-padding:  0 5%;
 
+.pfeil {
+    text-align: left;
+    width: min-content;
+    align-self: flex-start;
 }
-.DetailPPage{
+
+.detailCard {
+    width:min-content;
+    gap: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: solid 1px gray;
+    padding: 0 5%;
+    height: min-content;
 }
-.detailCard img{
+
+.DetailPPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10rem;
+}
+
+.detailCard img {
     width: 35rem;
-    border-radius: 2.5rem;
+    height: 35rem;
+    border-radius: 2rem;
+    object-fit: cover;
 }
-.UNIT{
+
+.UNIT {
     padding: 1rem 3rem;
     font-size: 25pt;
-    background-color:rgb(64, 170, 84) ;
+    background-color: rgb(64, 170, 84);
     border-radius: 1.5rem;
     color: white;
 }
-.PRICE{
+
+.PRICE {
     font-size: 40pt;
     text-align: center;
 }
-.NameAndRating{
-    display:flex;
+
+.NameAndRating {
+    display: flex;
     justify-content: center;
     flex-direction: row;
     gap: 5rem;
     align-items: center;
 }
-.THINGnAME{
+
+.THINGnAME {
     text-align: center;
     font-size: 25pt;
 }
-.RATING{
+
+.RATING {
     text-align: center;
     font-size: 20pt;
     font-weight: 700;
     color: rgb(110, 108, 108);
 }
 
-.Quantity{
+.Quantity {
     margin-top: 4rem;
     display: flex;
     justify-content: center;
@@ -76,11 +89,12 @@ padding:  0 5%;
     flex-direction: column;
     gap: 2rem;
 }
-.Q{
-color: rgb(113, 110, 110);
+
+.Q {
+    color: rgb(113, 110, 110);
 }
 
-.PMBTN{
+.PMBTN {
     height: 5rem;
     width: 5rem;
     padding: 3rem;
@@ -90,13 +104,46 @@ color: rgb(113, 110, 110);
     display: flex;
     justify-content: center;
     align-items: center;
-cursor: progress;
+    cursor: progress;
 }
 
-.Rechner{
+.Rechner {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     gap: 5rem;
+}
+
+.shopCard {
+    position: relative;
+    width: 100%;
+    height: 10rem;
+    z-index: -1;
+}
+
+.shCardQuantity {
+    position: absolute;
+    top: 2;
+    left: 53%;
+    background-color: rgb(216, 216, 216);
+    padding: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopCardImg {
+    display: flex;
+    width: 7rem;
+    margin: 0 auto;
+}
+.mittel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
