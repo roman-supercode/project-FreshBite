@@ -20,6 +20,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 function App() {
   return (
     <div className="App">
+            <div className="top"></div>
       <Router>
         <NavBar />
         <Routes>
@@ -31,10 +32,8 @@ function App() {
 
           <Route path="/filterpage2" element={<FilterPage2 />} />
           <Route path="/filtered" element={<Filtered />} />
-
           <Route path="/item/" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
-
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/order-history" element={<OrderHistory />} />
           <Route path="/profile/:id" element={<Profile />} />
