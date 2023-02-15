@@ -71,6 +71,8 @@
   background-color: white;
   z-index: 1;
   margin: 1rem;
+  text-decoration: none;
+  text-align: center;
 }
 .Afb:hover {
   transition: 1s;
@@ -280,7 +282,7 @@
 .welcome-buttons button {
   padding: 1rem 2rem;
   border-radius: 1rem;
-  background-color: #55c57a;
+  background-color: #40aa54;
   color: white;
   font-size: 1.5rem;
   border: none;
@@ -298,13 +300,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
+  padding-top: 2.5rem;
 }
 
 .form-container {
@@ -312,27 +308,22 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 2rem;
-  border-radius: 1rem;
-  background-color: white;
-  width: 90%;
-  max-width: 30rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
 }
 
 .form-container input {
   width: 100%;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 8px;
   border: 1px solid #ddd;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   outline: none;
 }
 
 .form-container button {
   width: 100%;
-  padding: 1rem;
-  border-radius: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
   background-color: #55c57a;
   color: white;
   font-size: 1.5rem;
@@ -344,4 +335,20 @@
 
 .form-container button:hover {
   background-color: #7dd892;
+}
+.deliveryBoyContainer {
+  margin-top: 18rem;
+}
+
+.goBackRegLog {
+  position: absolute;
+  width: 100px;
+}
+
+.goBackTopContainer {
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }

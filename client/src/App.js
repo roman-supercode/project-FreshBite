@@ -1,10 +1,8 @@
-//import { NavBar } from "./components/NavBar/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Create from "./components/Create";
 // import Filter from './components/filter/Filter';
 import Filtered from "./components/filterpage/filtered";
-
 import FilterPage2 from "./components/filterpage/FilterPage2";
 import Home from "./pages/Home/Home";
 import ProdoctTour from "./components/ProductTour/ProdoctTour";
@@ -15,14 +13,20 @@ import OrderHistory from "./pages/OrderHistory/OrderHistory";
 import Profile from "./pages/Profile/Profile";
 import Filter from "./components/filter/Filter";
 import { NavBar } from "./components/NavBar/NavBar";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register.jsx";
 
 function App() {
   return (
     <div className="App">
-            <div className="top"></div>
+      {/* <div className="top"></div> */}
       <Router>
         <Routes>
           <Route path="/" element={<ProdoctTour />} />
+          {/* <Route path="/" element={<Splash />} /> */}
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route
             path="/Home"
             element={
