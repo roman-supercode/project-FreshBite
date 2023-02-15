@@ -61,14 +61,16 @@ article {
   cursor: pointer;
   display: block;
   margin: 3rem auto;
-  
+  transition: all 0.2s ease-in-out;
+}
+
+.btnProfil:hover {
+  transform: scale(1.05);
 }
 
 .topDiv {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5rem;
   padding: 1rem 0.5rem;
 }
-
-

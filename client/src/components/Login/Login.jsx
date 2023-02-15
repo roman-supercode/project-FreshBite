@@ -1,0 +1,78 @@
+import "./Login.css";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, Toaster } from "react-hot-toast";
+import GoBackButton from "../GoBack/GoBackButton";
+import { BiShowAlt, BiHide } from "react-icons/bi";
+
+const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:9999/api/v1/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      //   console.log(data);
+
+      if (response.ok) {
+        toast.success("Successfully logged");
+        setTimeout(() => {
+          navigate("/home");
+        }, 3_000);
+      } else {
+        toast.error(data.msg);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  //   const toggleShowPassword = () => {
+  //     setShowPassword(!showPassword);
+  //   };
+
+  return (
+    <div className="form-overlay">
+      <div className="goBackTopContainer">
+        <Toaster position="top-center" />
+        <GoBackButton />
+      </div>
+      <form className="form-container" onSubmit={handleLoginSubmit}>
+        <h2>Schön dich wiederzusehen!</h2>
+        <input
+          autoFocus
+          type="email"
+          placeholder="E-Mail-Adresse"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type={showPassword ? "text" : "password"}
+          placeholder="Passwort"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {/* <div className="password-toggle-button" onClick={toggleShowPassword}>
+          {showPassword ? <BiHide /> : <BiShowAlt />}
+        </div> */}
+        <button type="submit">Anmelden</button>
+        <Link to="">Passwort vergessen?</Link>
+
+        <p>
+          Neu bei FreshBite? <Link to="/register">Erstelle ein Konto</Link>
+        </p>
+      </form>
+    </div>
+  );
+};
+export default Login;

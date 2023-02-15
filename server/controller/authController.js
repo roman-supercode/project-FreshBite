@@ -7,13 +7,13 @@ const register = async (req, res) => {
 
   // Prüfe ob alle erforderlichen Daten vorhanden sind
   if (!firstName || !lastName || !email || !password) {
-    return res.status(400).json({ msg: "please provide all values" });
+    return res.status(400).json({ msg: "Please provide all values" });
   }
 
   // Prüfe ob die Benutzer-Email bereits in der DB existiert
   const userAlreadyExists = await User.findOne({ email });
   if (userAlreadyExists) {
-    return res.status(400).json({ msg: "email already in use!" });
+    return res.status(400).json({ msg: "Email already in use!" });
   }
 
   // Erstellt einen neuen Datensatz in der DB
@@ -37,7 +37,7 @@ const login = async (req, res) => {
 
   // Prüfe ob alle erforderlichen Daten vorhanden sind
   if (!email || !password) {
-    res.status(400).json({ msg: "Please provide all values" });
+    return res.status(400).json({ msg: "Please provide all values" });
   }
 
   // Suche den Benutzer in der DB anhand der E-Mail-Adresse.
@@ -45,7 +45,7 @@ const login = async (req, res) => {
   // die select-Methode dient dazu, das Passwortfeld explizit aus aus der DB auszuwählen
   const user = await User.findOne({ email }).select("+password");
   if (!user) {
-    res.status(401).json({ msg: "Invalid Credentials" });
+    return res.status(401).json({ msg: "Invalid Credentials" });
   }
 
   // Vergleiche das Passwort vom Benutzer mit dem ausgewählten Passwort aus der DB
@@ -55,6 +55,7 @@ const login = async (req, res) => {
   // und bricht den Anmeldevorgang ab
   if (!isPasswordCorrect) {
     res.status(401).json({ msg: "Invalid Credentials" });
+    return;
   }
 
   // erstellt einen neuen JSON-Web-Token für den "user"
