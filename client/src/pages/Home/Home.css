@@ -66,13 +66,13 @@
 }
 
 .cardBilderContainer {
-  width: 100%;
+width: 100%;
 }
 
 .cardBilder {
     display: flex;
     height: 5rem;
-    width: 7rem;
+    width: 10rem;
     object-fit: contain;
     border-radius: 2.5rem;
     justify-content: center;

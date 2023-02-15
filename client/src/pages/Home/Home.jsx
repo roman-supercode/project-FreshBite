@@ -21,7 +21,7 @@ const Home = () => {
       const randomIndex = Math.floor(Math.random() * data.length);
       randomSelection.push(data[randomIndex]);
     }
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       const randomIndex = Math.floor(Math.random() * data.length);
       randomSelection2.push(data[randomIndex]);
     }
@@ -31,8 +31,9 @@ const Home = () => {
 
       <span className="head">
 
-          <button className="FilterBtn">        <Link className="routeLink filterContainer" to="/filterpage2">  </Link>
-          </button>
+      <Link className="routeLink filterContainer FilterBtn" to="/filterpage2">       <button className="FilterBtn">  
+   
+          </button>            </Link>
       
         <div className="carousel">
           <div className="carousel-item">
