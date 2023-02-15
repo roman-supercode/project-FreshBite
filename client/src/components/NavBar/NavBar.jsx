@@ -11,27 +11,41 @@ import profileUnclicked from "../../assets/NavBar/profile-unclicked.svg";
 import cart from "../../assets/NavBar/cart.svg";
 
 export const NavBar = ({ page }) => {
-
-    return (
-        <div className="navbar">
-            <Link to="/home">
-                <img className="navLinkToHome" alt="home button" src={page !== "home" ? homeUnclicked : homeClicked} />
-            </Link>
-            <Link to="/order-history">
-                <img className="navLinkToOrders" alt="orders button" src={page !== "orders" ? ordersUnclicked : ordersClicked} />
-            </Link>
-            {/* WARENKORB */}
-            <Link to="/cart" >
-                <img className="navLinkToCart" alt="cart button" src={cart} />
-            </Link>
-            {/* WARENKORB */}
-            <Link to="/wishlist">
-                <img className="navLinkToWishlist" alt="wishlist button" src={page !== "wishlist" ? wishlistUnclicked : wishlistClicked} />
-            </Link>
-            <Link to="/profile/xy">
-                <img className="navLinkToProfile" alt="profile button" src={page !== "profile" ? profileUnclicked : profileClicked} />
-            </Link>
-
-        </div>
-    );
+  return (
+    <div className="navbar">
+      <Link to="/home">
+        <img
+          className="navLinkToHome"
+          alt="home button"
+          src={page !== "home" ? homeUnclicked : homeClicked}
+        />
+      </Link>
+      <Link to="/order-history">
+        <img
+          className="navLinkToOrders"
+          alt="orders button"
+          src={page !== "order-history" ? ordersUnclicked : ordersClicked}
+        />
+      </Link>
+      {/* WARENKORB */}
+      <Link to="/cart">
+        <img className="navLinkToCart" alt="cart button" src={cart} />
+      </Link>
+      {/* WARENKORB */}
+      <Link to="/wishlist">
+        <img
+          className="navLinkToWishlist"
+          alt="wishlist button"
+          src={page !== "wishlist" ? wishlistUnclicked : wishlistClicked}
+        />
+      </Link>
+      <Link to="/profile">
+        <img
+          className="navLinkToProfile"
+          alt="profile button"
+          src={page !== "profile" ? profileUnclicked : profileClicked}
+        />
+      </Link>
+    </div>
+  );
 };

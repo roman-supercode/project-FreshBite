@@ -1,7 +1,4 @@
-// import { connectDB } from "../db/connect.js";
-// import mongodb from "mongodb";
 import Product from "../models/Product.js";
-import { ObjectId } from "mongodb";
 
 // GET - ALL
 export const getAllProducts = async (req, res) => {
