@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { fetchData } from '../fetchData';
 import FilterCard from '../filtercards/FilterCard';
+import { BsFilterLeft } from 'react-icons/bs';
 
 // styles
 import './Filter.css';
@@ -36,20 +37,27 @@ const Filter = () => {
     const [search, setSearch] = useState('');
     return (
         <main>
-            <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'left' }}  ></input>
-            <div>
+            <div className='search-container' >
+                <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'left' }}  ></input>
+                <span>
+                    <BsFilterLeft />
+                </span>
+            </div>
+            <div className='button-container' >
                 <div>
-                    <button onClick={e => { setCategoryFilter(e.target.value); }} >All</button>
+                    <button className='filter-btn' onClick={e => { setCategoryFilter(e.target.value); }} >All</button>
                 </div>
-                {
-                    updatecat.map((item, index) => {
-                        return (
-                            <button onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
-                                {item[0]}
-                            </button>
-                        );
-                    })
-                }
+                <div>
+                    {
+                        updatecat.map((item, index) => {
+                            return (
+                                <button className='filter-btn' onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
+                                    {item[0]}
+                                </button>
+                            );
+                        })
+                    }
+                </div>
             </div>
             <div>
                 {filteredProducts.filter((item) => {

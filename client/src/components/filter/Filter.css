@@ -1,0 +1,35 @@
+.button-container {
+    display: flex;
+}
+
+.filter-btn {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 13.8px;
+    border-top: solid 2px gray;
+    border-bottom: solid 2px gray;
+    padding: 2.00999px;
+
+}
+
+.filter-btn:active,
+.filter-btn:focus {
+    color: #333;
+    /* background-color: lightgray; */
+    text-decoration: underline;
+
+}
+
+.search-container {
+    background-color: #40aa54;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+.input {
+    right: 10px;
+    font-size: 10px;
+
+
+}
