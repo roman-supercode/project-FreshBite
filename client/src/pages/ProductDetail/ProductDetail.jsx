@@ -13,7 +13,7 @@ function ProductDetail() {
   return (
     <div className="DetailPPage">
       <span className="obenC">
-        <Link className="routeLink back">
+        <Link to="#" className="routeLink back">
           <h1 className="pfeil">🔙</h1>    </Link>
         <h1 className="GDeals" > Grocery Deals</h1></span>
       <span className="detailCard">
