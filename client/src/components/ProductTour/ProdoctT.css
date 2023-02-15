@@ -54,11 +54,11 @@
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 
 .Afb {
-  color: rgb(255, 255, 255);
+  color: rgb(49, 49, 49);
   font-size: 20pt;
   font-weight: 900;
   animation: opB 4s linear;
@@ -68,7 +68,7 @@
   padding: 0;
   margin: 0;
   transition: 1s;
-  background-color: rgba(160, 159, 159, 0.494);
+  background-color: white;
   z-index: 1;
   margin: 1rem;
 }
