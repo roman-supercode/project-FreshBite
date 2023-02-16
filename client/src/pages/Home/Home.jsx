@@ -25,9 +25,9 @@ const Home = () => {
     };
 
     fetchProducts();
-    // fetch("https://freshbite-server.up.railway.app/api/v1/products")
-    //   .then((response) => response.json())
-    //   .then((data) => setData(data));
+    //fetch("https://freshbite-server.up.railway.app/api/v1/products")
+    // .then((response) => response.json())
+    //.then((data) => setData(data));
   }, []);
   console.log(products);
 

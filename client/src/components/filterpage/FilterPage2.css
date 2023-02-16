@@ -50,3 +50,19 @@
     background: #40aa54;
     color: white;
 }
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+}
+
+#submit_btn {
+    margin-top: 250px;
+    border: none;
+    border-radius: 1em;
+    padding: 4px;
+    background: none;
+    background-color: #d8eedc;
+    color: #333;
+    padding: 20px 40px;
+}
