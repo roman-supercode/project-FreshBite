@@ -11,13 +11,14 @@ function Welcome() {
         </div>
         <span className="buttonContainer">
           <Link to="login" className="Afb">
-            Einloggen
+          Log in
           </Link>
           <Link to="register" className="Afb">
-            Registriern
+          Register
           </Link>
           <Link className="Afb" to="/Home">
-            Weiter als Gast?
+  
+Continue as Guest
           </Link>
         </span>
       </div>
