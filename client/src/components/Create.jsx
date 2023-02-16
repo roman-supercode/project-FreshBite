@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 const Create = () => {
   const nameRef = useRef();
@@ -7,10 +7,12 @@ const Create = () => {
   const priceRef = useRef();
   const descRef = useRef();
   const originRef = useRef();
-  const quanRef = useRef();
+  const packUnitRef = useRef();
   const ratingRef = useRef();
   const unitRef = useRef();
-
+  const favRef = useRef();
+  const saleRef = useRef();
+  const reviewRef = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,24 +40,31 @@ const Create = () => {
       price: priceRef.current.value,
       description: descRef.current.value,
       origin: originRef.current.value,
-      quantity: quanRef.current.value,
+      packUnit: packUnitRef.current.value,
       rating: ratingRef.current.value,
       url: data.secure_url,
       unit: unitRef.current.value,
+      isFav: favRef.current.value,
+      sale: saleRef.current.value,
+      numReviews: reviewRef.current.value,
     };
 
     console.log(item);
+    const url = "http://localhost:9999/api/v1/products";
+    const railwayUrl =
+      "https://freshbite-server.up.railway.app/api/v1/products";
 
-    const backendResponse = await fetch(
-      "https://freshbite-server.up.railway.app/api/v1/products",
-      {
+    try {
+      const backendResponse = await fetch(railwayUrl, {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
         body: JSON.stringify(item),
-      }
-    );
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -75,12 +84,16 @@ const Create = () => {
           <input name="origin" type="text" required ref={originRef} />
         </label>
         <label>
-          <span>quantity</span>
-          <input name="quantity" type="text" required ref={quanRef} />
+          <span>Verpackungseinheit</span>
+          <input name="packUnit" type="number" required ref={packUnitRef} />
         </label>
         <label>
           <span>Rating</span>
-          <input name="rating" type="text" required ref={ratingRef} />
+          <input name="rating" type="number" required ref={ratingRef} />
+        </label>
+        <label>
+          <span>Review Number</span>
+          <input name="rating" type="number" required ref={reviewRef} />
         </label>
         <label>
           <span>Unit</span>
@@ -88,8 +101,33 @@ const Create = () => {
             <option name="unit" value="kg">
               kg
             </option>
-            <option name="unit" value="piece">
+            <option name="unit" value="stück">
               piece
+            </option>
+            <option name="unit" value="g">
+              gramm
+            </option>
+          </select>
+        </label>
+        <label>
+          <span>Favorite</span>
+          <select name="unit" ref={favRef}>
+            <option name="unit" value="false">
+              false
+            </option>
+            <option name="unit" value="true">
+              true
+            </option>
+          </select>
+        </label>
+        <label>
+          <span>Angebot (Sale)</span>
+          <select name="unit" ref={saleRef}>
+            <option name="unit" value="false">
+              false
+            </option>
+            <option name="unit" value="true">
+              true
             </option>
           </select>
         </label>
@@ -97,29 +135,32 @@ const Create = () => {
         <label>
           <span>Category</span>
           <select name="category" ref={catRef}>
-            <option name="category" value="seafood">
-              Seafood
+            <option name="category" value="obst">
+              Obst
             </option>
-            <option name="category" value="fruit">
-              Fruits
+            <option name="category" value="gemuese">
+              Gemuese
             </option>
-            <option name="category" value="meat">
-              Meat
+            <option name="category" value="fleisch">
+              Fleisch
             </option>
-            <option name="category" value="vegetable">
-              Vegetable
+            <option name="category" value="fisch">
+              Fisch
             </option>
-            <option name="category" value="bread">
-              Bread
+            <option name="category" value="veggie">
+              Veggie
             </option>
-            <option name="category" value="frozen">
-              Frozen
+            <option name="category" value="tiefkuehl">
+              Tiefkuehl
             </option>
-            <option name="category" value="organic">
-              Organic
+            <option name="category" value="getraenke">
+              Getraenke
             </option>
-            <option name="category" value="milk&egg">
-              Milk & Eggs
+            <option name="category" value="eier&milch">
+              Eier & Milch
+            </option>
+            <option name="category" value="feinkost">
+              Feinkost
             </option>
           </select>
         </label>

@@ -1,5 +1,6 @@
 .slider-container {
     display: flex;
+    padding: 38px 0;
 }
 
 .max-div {
@@ -8,8 +9,8 @@
 
 input[type="range"] {
 
-    accent-color: green;
-    background-color: green;
+    accent-color: #40aa54;
+    background-color: #40aa54;
 
 
 }

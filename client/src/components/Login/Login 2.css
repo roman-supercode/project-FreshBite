@@ -1,9 +1,0 @@
-input:focus {
-  border: 2px solid #40aa54;
-}
-
-.password-toggle-button {
-  position: absolute;
-  right: 17vw;
-  bottom: 48vh;
-}

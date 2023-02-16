@@ -1,35 +1,44 @@
 .button-container {
     display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
 }
 
 .filter-btn {
-    padding: 0;
     border: none;
     background: none;
-    font-size: 13.8px;
+    font-size: 12.8px;
     border-top: solid 2px gray;
     border-bottom: solid 2px gray;
-    padding: 2.00999px;
+    padding-left: 1.1px;
+
+
 
 }
 
 .filter-btn:active,
 .filter-btn:focus {
     color: #333;
-    /* background-color: lightgray; */
-    text-decoration: underline;
+    background-color: lightgray;
+    /* text-decoration: underline; */
 
 }
 
 .search-container {
+    display: flex;
+    justify-content: space-between;
     background-color: #40aa54;
-    padding-bottom: 15px;
-    margin-bottom: 5px;
+    padding: 10px 15px;
 }
 
 .input {
     right: 10px;
     font-size: 10px;
+}
 
-
+.products-container {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    /* grid-gap: 5px; */
 }
