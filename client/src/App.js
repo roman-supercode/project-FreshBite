@@ -23,10 +23,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<ProdoctTour />} />
-          {/* <Route path="/" element={<Splash />} /> */}
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          <Route path="add" element={<Create />} />
           <Route
             path="/Home"
             element={

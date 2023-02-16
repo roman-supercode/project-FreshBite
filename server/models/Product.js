@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-// Product-Modell
 const ProductSchema = new mongoose.Schema(
   {
     name: {
@@ -22,7 +21,7 @@ const ProductSchema = new mongoose.Schema(
     },
     quantity: {
       type: Number,
-      required: true,
+      default: 1,
     },
     rating: {
       type: Number,
@@ -36,13 +35,21 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    fav: {
+    isFav: {
       type: Boolean,
       default: false,
     },
     sale: {
       type: Boolean,
       default: false,
+    },
+    numReviews: {
+      type: Number,
+      required: true,
+    },
+    packUnit: {
+      type: Number,
+      required: true,
     },
   },
   { timestamps: true }

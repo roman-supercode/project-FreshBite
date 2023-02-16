@@ -7,18 +7,18 @@
   background-size: contain;
   background-repeat: no-repeat;
   align-self: flex-start;
-
 }
-.filterContainer{
+.filterContainer {
   display: flex;
   justify-content: flex-start;
 }
-.HomePage{
+.HomePage {
   margin-bottom: 6rem;
+  background-color: #f5f5f5;
 }
 
-.top{
-  background-color:  rgb(64, 182, 18);
+.top {
+  background-color: rgb(64, 182, 18);
   width: 100%;
   height: 2rem;
 }
@@ -32,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: .5rem;
+  margin: 0.5rem;
   flex-direction: column;
 }
 
@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: center;
   width: 97.5%;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 
 .ueberschreift {
@@ -66,18 +66,18 @@
 }
 
 .cardBilderContainer {
-width: 100%;
+  width: 100%;
 }
 
 .cardBilder {
-    display: flex;
-    height: 5rem;
-    width: 10rem;
-    object-fit: contain;
-    border-radius: 2.5rem;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto 0 auto;
+  display: flex;
+  height: 5rem;
+  width: 10rem;
+  object-fit: contain;
+  border-radius: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 0 auto;
 }
 
 .PriceRating {
@@ -135,7 +135,6 @@ width: 100%;
 .carousel-item img {
   width: 100%;
   height: auto;
-  
 }
 @keyframes autoplay {
   0% {

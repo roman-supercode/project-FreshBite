@@ -5,9 +5,13 @@ import {
   getAllProducts,
   addProduct,
   getOneProduct,
+  toggleFavorite,
 } from "../controller/productController.js";
 
-router.route("/").post(addProduct).get(getAllProducts);
+router.route("/").get(getAllProducts).post(addProduct);
 router.route("/item/:id").get(getOneProduct);
+
+// Favorite
+router.route("/item/:id/fav").post(toggleFavorite);
 
 export default router;
