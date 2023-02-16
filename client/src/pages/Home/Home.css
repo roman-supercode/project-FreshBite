@@ -1,6 +1,6 @@
 .FilterBtn {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 1rem;
   background-image: url(../../img/Filterimg.jpeg);
   background-position: center;
@@ -25,14 +25,13 @@
 .sale {
   width: 80%;
   display: block;
-  margin: 1rem auto;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 .head {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem;
+  margin: .5rem .5rem 0rem .5rem ;
   flex-direction: column;
 }
 
@@ -48,17 +47,20 @@
 
 .ueberschreift {
   width: 100%;
-  text-align: left;
-  border: solid 0.1rem lightgray;
+  text-align: center;
+  border-top: solid 1px black;
+
 }
 
 .TodayGroceryDealsCards {
   width: 13rem;
-  height: 11rem;
+  height: 13rem;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.38);
-  border: solid 0.1rem lightgray;
+  background-color: rgb(243, 243, 243);
+  border: solid 0.1rem rgba(81, 191, 2, 0.188);
+  border-bottom: none;
+  border-radius: .5rem;
   font-size: 15pt;
   font-weight: 600;
   text-decoration: none;
@@ -66,42 +68,54 @@
 }
 
 .cardBilderContainer {
-  width: 100%;
+width: 100%;
+height: 60%;
 }
 
 .cardBilder {
-  display: flex;
-  height: 5rem;
-  width: 10rem;
-  object-fit: contain;
-  border-radius: 2.5rem;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem auto 0 auto;
+    display: flex;
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto 0 auto;
+    mix-blend-mode: darken;
 }
 
 .PriceRating {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 1rem;
+  margin-top: .5rem;
 }
 
 .name {
   text-align: center;
+  margin-top: .6rem;
 }
 .pommes {
   display: block;
   width: 97%;
   margin: 0.5rem auto;
 }
+/* .GMDeals{
+  width: 100%;
+  height: 54.5rem;
+  overflow: hidden;
+  position: relative;
+} */
 .GroceryMemberDealsCards {
   width: 13rem;
-  height: 11rem;
+  height: 13rem;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.38);
-  border: solid 0.1rem lightgray;
+  background-color: rgb(243, 243, 243);
+  border: solid 0.1rem rgba(81, 191, 2, 0.188);
+
+  border-bottom: none;
+  border-radius: .5rem;
   font-size: 15pt;
   font-weight: 600;
   text-decoration: none;
@@ -117,11 +131,11 @@
 
 .carousel {
   width: 100%;
-  height: 21rem;
+  height: 13.5rem;
   overflow: hidden;
   position: relative;
   background-image: url("../../img/sorti.png");
-  background-size: 100% 15.6rem;
+  background-size: 100% 3.6rem;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -148,8 +162,8 @@
   }
 }
 .carousel-item:nth-child(1) {
-  animation-delay: 0s;
+  animation-delay: -6s;
 }
 .carousel-item:nth-child(2) {
-  animation-delay: 6s;
+  animation-delay: 0s;
 }
