@@ -37,11 +37,12 @@ const Filter = () => {
     const [search, setSearch] = useState('');
     return (
         <main>
+
             <div className='search-container' >
-                <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'left' }}  ></input>
                 <span>
-                    <BsFilterLeft />
+                    <BsFilterLeft className='filter-icon' />
                 </span>
+                <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'left' }}  ></input>
             </div>
             <div className='button-container' >
                 <div>
@@ -59,7 +60,7 @@ const Filter = () => {
                     }
                 </div>
             </div>
-            <div>
+            <div className='products-container' >
                 {filteredProducts.filter((item) => {
                     return search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search);
                 }).map((item, index) => {

@@ -19,7 +19,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 function App() {
   return (
     <div className="App">
-            <div className="top"></div>
+      {/* <div className="top"></div> */}
       <Router>
         <Routes>
           <Route path="/" element={<ProdoctTour />} />

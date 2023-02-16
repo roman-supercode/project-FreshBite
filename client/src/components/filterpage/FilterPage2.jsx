@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { fetchData } from '../fetchData';
 import { Link, useNavigate } from 'react-router-dom';
 //import MultiRangeSlider from "multi-range-slider-react";
+import { MdArrowBackIos } from 'react-icons/md';
 
 import './Slider.css';
+import './FilterPage2.css';
 
 
 
@@ -67,56 +69,64 @@ const Filter = () => {
     const handleClear = () => {
         setCategoryFilter('');
         setSortOrder('');
+        setRiceFilter(15);
+        setPriceFilter(2);
+
     };
 
 
 
     return (
         <main>
-            <button onClick={handleClear} >Clear Filter</button>
-            <div>
-                <div>
-                    {
-                        updatecat.map((item, index) => {
-                            return (
-                                <button onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
-                                    {item[0]}
-                                </button>
-                            );
-                        })
-                    }
+            <Link id="link" to="/filter" >
+                <MdArrowBackIos /><span>Filters</span>
+            </Link>
+            <div className='ff-container' >
+                <div className='sort-container' >
+                    <p>Sort By</p>
+                    <button className='sort-btn' value="lowest" onClick={(e) => setSortOrder(e.target.value)} >Lowest Price</button>
+                    <button className='sort-btn' value="highest" onClick={(e) => setSortOrder(e.target.value)} >Highest Price</button>
+                    <button className='sort-btn' value="best" onClick={(e) => setSortOrder(e.target.value)} >Best Rating</button>
                 </div>
-                <section className='slider-container' >
-                    <div className='min-div' >
-                        <p> Min {priceFilter} </p>
-                        <input type="range"
-                            id="minR"
-                            min="2"
-                            max="8"
-                            step="0.1"
-                            value={priceFilter}
-                            onChange={(e) => setPriceFilter(e.target.value)}
-                        />
-                    </div>
-                    <div className='max-div' >
-                        <p> Max {riceFilter} </p>
-                        <input type="range"
-                            id="maxR"
-                            min="8"
-                            max="15"
-                            step="0.1"
-                            value={riceFilter}
-                            onChange={(e) => setRiceFilter(e.target.value)}
-                        />
-                    </div>
-                </section>
+                <div>
+                    <button id="clear" onClick={handleClear} >All Clear</button>
+                </div>
             </div>
-            <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
-                <option value="">Sort By</option>
-                <option value="lowest">Lowest Price</option>
-                <option value="highest">Highest Price</option>
-                <option value="best">Best Rating</option>
-            </select>
+            <section className='slider-container' >
+                <div className='min-div' >
+                    <p> Min {priceFilter} </p>
+                    <input type="range"
+                        id="minR"
+                        min="2"
+                        max="8"
+                        step="0.1"
+                        value={priceFilter}
+                        onChange={(e) => setPriceFilter(e.target.value)}
+                    />
+                </div>
+                <div className='max-div' >
+                    <p> Max {riceFilter} </p>
+                    <input type="range"
+                        id="maxR"
+                        min="8"
+                        max="15"
+                        step="0.1"
+                        value={riceFilter}
+                        onChange={(e) => setRiceFilter(e.target.value)}
+                    />
+                </div>
+            </section>
+            <div>
+                {
+                    updatecat.map((item, index) => {
+                        return (
+                            <button className='cat-btn' onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
+                                {item[0]}
+                            </button>
+                        );
+                    })
+                }
+            </div>
             <div>
                 <button onClick={apply} type="submit" >Apply</button>
             </div>
@@ -133,12 +143,17 @@ export default Filter;
 
 
 
-{/* <p>Min {priceFilter}</p>
-<input
-    type="range"
-    min="0"
-    max="15"
-    step="0.1"
-    value={priceFilter}
-    onChange={e => setPriceFilter(e.target.value)}
-/> */}
+
+
+
+
+
+
+
+
+
+{/* <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
+                <option value="lowest"  >Lowest Price</option>
+                <option value="highest"   >Highest Price</option>
+                <option value="best"  >Best Rating</option>
+            </select>  */}
