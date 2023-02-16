@@ -64,26 +64,25 @@
   animation: opB 4s linear;
   border-radius: 0.7rem;
   height: 4rem;
-  width: 60%;
-  padding: 0;
-  margin: 0;
-  transition: 1s;
+  width: 100%;
+  padding: 1rem;
+  transition: .5s;
   background-color: white;
-  z-index: 1;
   margin: 1rem;
   text-decoration: none;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Afb:hover {
-  transition: 1s;
+  transition: .5s;
   cursor: grab;
-  background-color: rgb(177, 177, 177);
+  background-color: rgb(41, 40, 40);
   color: greenyellow;
-  width: 80%;
   font-size: 25pt;
   border-radius: 1rem;
-  height: 5rem;
-  z-index: 2;
+
 }
 
 .buttonContainer:hover > :not(:hover) {
@@ -149,26 +148,36 @@
 @keyframes logoMove {
   0% {
     top: 50rem;
+    opacity: 0;
   }
 
   5% {
     top: 45rem;
+    opacity: 0;
+
   }
 
   10% {
     top: 40rem;
+    opacity: 0;
+
   }
 
   15% {
     top: 35rem;
+    opacity: 0;
+
   }
 
   20% {
     top: 30rem;
+
   }
 
   25% {
     top: 25rem;
+    opacity: 0;
+
   }
 
   30% {
@@ -349,6 +358,6 @@
   width: 100%;
   padding: 0 1rem;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
