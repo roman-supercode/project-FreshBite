@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./ProductDetail.css";
+import shopCard from "../../img/shopCard.svg";
+
 function ProductDetail() {
   const location = useLocation();
   console.log(location);
@@ -20,9 +22,14 @@ function ProductDetail() {
         <div className="PuT">  <p className="UNIT">{shortCut.quantity + shortCut.unit.toUpperCase()}</p>
      
         <h2 className="PRICE"> ${shortCut.price}</h2></div>
-
         <h4 className="THINGnAME">{shortCut.name}</h4>
-        <span className="NameAndRating"> <p className="RATING"> ⭐️ {shortCut.rating} {"  ( " + RandomRating + " ) Review"}</p></span>
+        <span className="NameAndRating">
+          {" "}
+          <p className="RATING">
+            {" "}
+            ⭐️ {shortCut.rating} {"  ( " + RandomRating + " ) Review"}
+          </p>
+        </span>
       </span>
       <span className="Quantity">
         <span> <h1 className="Q">Quantity</h1></span>
@@ -48,4 +55,5 @@ function ProductDetail() {
     </div>
   );
 }
-export default ProductDetail ;
+
+export default ProductDetail;
