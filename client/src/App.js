@@ -29,7 +29,7 @@ function App() {
 
           <Route path="add" element={<Create />} />
           <Route
-            path="/Home"
+            path="/home"
             element={
               <>
                 <Home />
@@ -42,6 +42,10 @@ function App() {
 
           <Route path="/filterpage2" element={<FilterPage2 />} />
           <Route path="/filtered" element={<Filtered />} />
+          
+          <Route path="/item/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+
           <Route
             path="/item"
             element={
@@ -58,6 +62,7 @@ function App() {
             </>
 
           } />
+
 
           <Route
             path="/wishlist"

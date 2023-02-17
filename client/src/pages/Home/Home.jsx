@@ -13,17 +13,19 @@ const Home = () => {
   let randomSelection2 = [];
 
   useEffect(() => {
-    // const fetchProducts = async () => {
-    //   const url = "http://localhost:9999/api/v1/products";
-   // const railwayUrl = "https://freshbite-server.up.railway.app/api/v1/products";
-    //   try {
-    //     const response = await fetch(url);
-    //     const data = await response.json();
-    //     setProducts(data);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
+    const fetchProducts = async () => {
+      const url = "http://localhost:9999/api/v1/products";
+      const railwayUrl =
+        "https://freshbite-server.up.railway.app/api/v1/products";
+      try {
+        const response = await fetch(railwayUrl);
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
 
 
     // fetchProducts();

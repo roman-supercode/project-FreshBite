@@ -65,7 +65,7 @@ export const toggleFavorite = async (req, res) => {
     }
 
     // Ändern des Werts von "fav"
-    good.fav = !good.fav;
+    good.isFav = !good.isFav;
 
     // Speichern des aktualisierten Produkts in der Datenbank
     await good.save();
@@ -73,6 +73,23 @@ export const toggleFavorite = async (req, res) => {
     // Senden des aktualisierten Produkts als JSON-Antwort
     res.json(good);
   } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// GET - FILTER WISHLIST
+export const filterWishlist = async (req, res) => {
+  try {
+    // rufe alle Produkte aus der DB
+    const filteredWishlist = await Product.find({ isFav: true });
+    // Sende die Produkte als JSON an den Client zurück, mit dem HTTP-Statuscode 200 (OK).
+    res.status(200).json(filteredWishlist);
+
+    if (!filteredWishlist) {
+      return res.status(404).json({ message: "Produkte nicht gefunden!" });
+    }
+  } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error.message });
   }
 };
