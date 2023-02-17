@@ -19,7 +19,7 @@ app.use(express.json());
 // POST - REGISTER
 app.use("/api/v1/auth", authRouter);
 // POST - LOGIN
-app.use("/api/v1/login", authRouter);
+app.use("/api/v1/auth", authRouter);
 
 // GET/POST für PRODUCTS
 app.use("/api/v1/products", productRouter);

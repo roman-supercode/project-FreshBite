@@ -29,11 +29,11 @@ function App() {
 
           <Route path="add" element={<Create />} />
           <Route
-            path="/Home"
+            path="/home"
             element={
               <>
                 <Home />
-                <NavBar page={"home"} />
+                <NavBar page={"Home"} />
               </>
             }
           />
@@ -42,8 +42,27 @@ function App() {
 
           <Route path="/filterpage2" element={<FilterPage2 />} />
           <Route path="/filtered" element={<Filtered />} />
-          <Route path="/item/" element={<ProductDetail />} />
+          
+          <Route path="/item/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+
+          <Route
+            path="/item"
+            element={
+              <>
+                <ProductDetail />
+                <NavBar page={"item"} />
+              </>
+            } />
+          <Route path="/cart" element={
+
+            <>
+              <Cart />
+              <NavBar page={"cat"} />
+            </>
+
+          } />
+
 
           <Route
             path="/wishlist"
