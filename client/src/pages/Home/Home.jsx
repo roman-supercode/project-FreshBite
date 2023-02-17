@@ -15,6 +15,7 @@ const Home = () => {
   useEffect(() => {
     // const fetchProducts = async () => {
     //   const url = "http://localhost:9999/api/v1/products";
+   // const railwayUrl = "https://freshbite-server.up.railway.app/api/v1/products";
     //   try {
     //     const response = await fetch(url);
     //     const data = await response.json();
@@ -23,6 +24,7 @@ const Home = () => {
     //     console.log(error);
     //   }
     // };
+
 
     // fetchProducts();
     fetch("https://freshbite-server.up.railway.app/api/v1/products")
