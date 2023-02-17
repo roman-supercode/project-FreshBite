@@ -44,23 +44,22 @@
   width: 97.5%;
   margin: 0 auto;
 }
-
-.ueberschreift {
-  width: 100%;
-  text-align: center;
-  border-top: solid 1px black;
-
-}
-
-.TodayGroceryDealsCards {
-  width: 13rem;
+.ZGDeals{
   height: 13rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow:auto;
+  white-space: nowrap
+}
+.TodayGroceryDealsCards {
+  width: 12rem;
+  height: 12rem;
+margin: .5rem;
   display: flex;
   flex-direction: column;
-  background-color: rgb(243, 243, 243);
-  border: solid 0.1rem rgba(81, 191, 2, 0.188);
-  border-bottom: none;
-  border-radius: .5rem;
+  background-color: rgb(233, 233, 233);
+  border-radius: 1.5rem;
   font-size: 15pt;
   font-weight: 600;
   text-decoration: none;
@@ -74,7 +73,7 @@ height: 60%;
 
 .cardBilder {
     display: flex;
-    width: 100%;
+    width: 10rem;
     height:100%;
     object-fit: contain;
     border-radius: 2rem;
@@ -100,22 +99,22 @@ height: 60%;
   width: 97%;
   margin: 0.5rem auto;
 }
-/* .GMDeals{
-  width: 100%;
-  height: 54.5rem;
-  overflow: hidden;
-  position: relative;
-} */
-.GroceryMemberDealsCards {
-  width: 13rem;
+.GMDeals{
   height: 13rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow:auto;
+  white-space: nowrap
+}
+.GroceryMemberDealsCards {
+  width: 12rem;
+  height: 12rem;
+margin: .5rem;
   display: flex;
   flex-direction: column;
-  background-color: rgb(243, 243, 243);
-  border: solid 0.1rem rgba(81, 191, 2, 0.188);
-
-  border-bottom: none;
-  border-radius: .5rem;
+  background-color: rgb(233, 233, 233);
+  border-radius: 1.5rem;
   font-size: 15pt;
   font-weight: 600;
   text-decoration: none;
