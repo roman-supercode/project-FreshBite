@@ -127,8 +127,8 @@ const Filter = () => {
                     })
                 }
             </div>
-            <div>
-                <button onClick={apply} type="submit" >Apply</button>
+            <div className='submit-btn' >
+                <button id="submit_btn" onClick={apply} type="submit" >Apply</button>
             </div>
         </main>
 
