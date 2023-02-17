@@ -12,6 +12,7 @@ const Cart = () => {
 
 //TODO produkte im array oder use state übergenen und drüber map()
 //TODO einkaufs wert der produkte im warenkorb anzeigen lassen (gesamt wert)
+//TODO wishlist statisch anzeigen lassen
 //! inhalt des arrays oder use state zählen und im einkaufs wagen anzeigen kp wie hab gegeoogelt und nur schmutz
 //? Seiten Reloade bugt bzw geht nicht man muss immer zu home zurück FIXED GLAUB ICH
   return (
