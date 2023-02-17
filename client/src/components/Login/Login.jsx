@@ -1,11 +1,16 @@
 import "./Login.css";
-import { useState } from "react";
+// import { useAuth } from "../../context/AuthContext";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, Toaster } from "react-hot-toast";
 import GoBackButton from "../GoBack/GoBackButton";
 import { BiShowAlt, BiHide } from "react-icons/bi";
+import { useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
+  const { setAuthData } = useContext(AuthContext);
+  
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,8 +28,9 @@ const Login = () => {
       });
       const data = await response.json();
       //   console.log(data);
-
+      console.log(data);
       if (response.ok) {
+        setAuthData(data);
         toast.success("Successfully logged");
         setTimeout(() => {
           navigate("/home");

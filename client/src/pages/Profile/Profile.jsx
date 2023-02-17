@@ -1,8 +1,18 @@
 import "./Profile.css";
 import cameraIcon from "../../assets/camera-icon.svg";
 import GoBackButton from "../../components/GoBack/GoBackButton";
+// import { useAuth } from "../../context/AuthContext";
+import { useContext } from "react";
+import { useState } from "react";
+
+import { BiAlarmSnooze } from "react-icons/bi";
+import { AuthContext } from "../../context/AuthContext";
 
 const Profile = () => {
+  const { authData } = useContext(AuthContext);
+  // console.log(authData.user.email);
+  // const { profileData, setProfileData } = useState();
+
   return (
     <div className="profileContainer">
       <section className="topSection">
@@ -21,11 +31,13 @@ const Profile = () => {
       <section className="bottomSection">
         <article>
           <p className="fix">Name</p>
-          <p className="variabel">{"Anna Flowers"}</p>
+          <p className="variabel">
+            {authData?.user?.firstName + authData?.user?.lastName}
+          </p>
         </article>
         <article>
           <p className="fix">E-Mail-Adresse</p>
-          <p className="variabel">{"anna@gmail.com"}</p>
+          <p className="variabel">{authData?.user?.email}</p>
         </article>
         <article>
           <p className="fix">Lieferadresse</p>
