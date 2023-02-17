@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchData } from '../fetchData';
 import FilterCard from '../filtercards/FilterCard';
 import { BsFilterLeft } from 'react-icons/bs';
@@ -19,7 +20,7 @@ const Filter = () => {
         fetchProducts();
 
     }, []);
-    console.log(products[4]);
+    console.log(products);
 
     //duplicate aus category entfernen
     const dupcat = [...new Map(products.map((p) => [p.category]))];
@@ -39,9 +40,9 @@ const Filter = () => {
         <main>
 
             <div className='search-container' >
-                <span>
-                    <BsFilterLeft className='filter-icon' />
-                </span>
+                <Link to="/filterpage2" >
+                    <BsFilterLeft id='react-icon' />
+                </Link>
                 <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'left' }}  ></input>
             </div>
             <div className='button-container' >
@@ -78,4 +79,3 @@ const Filter = () => {
 export default Filter;
 
 
-/* {filteredProducts.map */

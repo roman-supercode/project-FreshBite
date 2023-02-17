@@ -18,7 +18,7 @@ const Home = () => {
       const railwayUrl =
         "https://freshbite-server.up.railway.app/api/v1/products";
       try {
-        const response = await fetch(url);
+        const response = await fetch(railwayUrl);
         const data = await response.json();
         setProducts(data);
       } catch (error) {
