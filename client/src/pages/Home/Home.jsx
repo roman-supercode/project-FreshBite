@@ -4,15 +4,17 @@ import zwanzigZ from "../../img/Z.png";
 import pommes from "../../img/pommes.png";
 import "./Home.css";
 import { Link } from "react-router-dom";
-//import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductCard from "../../components/ProductCard/ProductCard";
 const Home = () => {
   // const [products, setProducts] = useState([]);
   const [data, setData] = useState([]);
  //  const [isFavorite, setIsFavorite] = useState(data.fav);
+
   let randomSelection = [];
   let randomSelection2 = [];
 
   useEffect(() => {
+
     // const fetchProducts = async () => {
     //   const url = "http://localhost:9999/api/v1/products";
     //   const railwayUrl =
@@ -27,10 +29,9 @@ const Home = () => {
     // };
 
 
-    // fetchProducts();
-    fetch("https://freshbite-server.up.railway.app/api/v1/products")
-      .then((response) => response.json())
-      .then((data) => setData(data));
+    // fetch("https://freshbite-server.up.railway.app/api/v1/products")
+    //   .then((response) => response.json())
+    //   .then((data) => setData(data));
   }, []);
   // console.log(products);
 
@@ -62,14 +63,15 @@ const Home = () => {
         </div>
       </span>
 
-
       <h1 className="ueberschreift">Today Grocery Deals</h1>
-      <span className="ZGDeals">
-        {/* {products.map((product) => { */}
-        {randomSelection.map((datas, i) => {
+      <span className="ZGDeals food-cards-container">
+        {products.map((product) => {
+          {
+            /* {randomSelection.map((datas, i) => { */
+          }
 
           return (
-            // <ProductCard key={product._id} product={product} />
+            <ProductCard key={product._id} product={product} />
 
             <Link
               state={datas}
@@ -91,6 +93,7 @@ const Home = () => {
                  </button>  */}
               </span>
             </Link>
+
           );
         })}
       </span>

@@ -93,3 +93,27 @@ export const filterWishlist = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+// PUT - CLEAR WISHLIST
+export const clearWishlist = async (req, res) => {
+  try {
+    const result = await Product.updateMany({ isFav: true }, { isFav: false });
+    res.json(result);
+    // filterIsFav.isFav = false;
+    // await filterIsFav.save();
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// PUT - DELETE ITEM FROM WISHLIST
+export const deleteItemFromWishlist = async (req, res) => {
+  const id = req.params.id;
+  const isFav = req.body.isFav;
+
+  try {
+    const result = await Product.updateOne({ _id: id }, { isFav });
+    res.status(200).json(result);
+  } catch (error) {}
+};
