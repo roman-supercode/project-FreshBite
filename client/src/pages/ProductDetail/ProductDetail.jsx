@@ -1,13 +1,15 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import "./ProductDetail.css";
 
-import shopCard from "../../img/shopCard.svg";
+
 
 function ProductDetail() {
 
   const { id } = useParams();
   const [detail, setDetail] = useState();
+  const [Quantity, setQuantity] = useState();
   useEffect(() => {
     fetch(`https://freshbite-server.up.railway.app/api/v1/products/item/${id}`)
       .then((response) => {
@@ -19,20 +21,12 @@ function ProductDetail() {
       });
 
   }, []);
-
-
-
-  const RandomRating = Math.floor(Math.random() * (100 + 699 + 1) + 10);
-  const [Quantity, setQuantity] = useState(detail?.quantity);
-
+  if (!detail) {
+    return <h1>ScHmUtZ</h1>;
+  }
+  setQuantity(detail?.quantity);
+  const R = detail?.numReviews;
   let shopingCardPrice = detail?.price * Quantity;
-
-// import shopCard from "../../img/shopCard.svg";
-
-function ProductDetail() {
-  const [Quantity, setQuantity] = useState(shortCut.quantity);
-
-
   return (
     <div className="DetailPPage">
       <span className="obenC">
@@ -47,10 +41,10 @@ function ProductDetail() {
           <h2 className="PRICE"> ${detail?.price}</h2></div>
         <h4 className="THINGnAME">{detail?.name}</h4>
         <span className="NameAndRating">
-          {" "}
+
           <p className="RATING">
-            {" "}
-            ⭐️ {detail?.rating} {"  ( " + RandomRating + " ) Review"}
+
+            ⭐️ {detail?.rating} {"  ( " + R + " ) Review"}
           </p>
         </span>
       </span>
@@ -77,6 +71,8 @@ function ProductDetail() {
       </span>
     </div>
   );
+
 }
+
 
 export default ProductDetail;

@@ -1,4 +1,3 @@
-import star from "../../assets/star.svg";
 import { FcLike } from "react-icons/fc";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
@@ -6,13 +5,13 @@ import "./ProductCard.css";
 
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
-  const [isFavorite, setIsFavorite] = useState(product.isFav);
+const ProductCard = ({ datas }) => {
+  const [isFavorite, setIsFavorite] = useState(datas.isFav);
 
   // Favorite(Wishlist)
   const toggleFavorite = async () => {
     try {
-      const url = `http://localhost:9999/api/v1/products/item/${product._id}/fav`;
+      const url = `https://freshbite-server.up.railway.app/api/v1/products/item/${datas._id}/fav`;
       const response = await fetch(url, {
         method: "POST",
       });
@@ -23,26 +22,29 @@ const ProductCard = ({ product }) => {
     }
   };
   return (
-    <div className="TodayGroceryDealsCards">
-      {/* <Link to={`/item/${product._id}`} className="TodayGroceryDealsCards"> */}
+    <span className="FAVSchmutz TodayGroceryDealsCards">
+    <Link
+       state={datas}
+      to={`/item/${datas._id}`}
+      className="TodayGroceryDealsCards "
+    >
       <span className="cardBilderContainer">
-        <img className="cardBilder" src={product.url} alt="Bild"></img>
+        <img className="cardBilder" src={datas.url} alt="Bild"></img>
       </span>
       <span className="name">
-        <p>{product.name}</p>
+        <p className="name2">{datas.name}</p>
       </span>
       <span className="PriceRating">
-        <p>{product.price}€</p>
-        <span>
-          <img src={star} alt="star" />
-          <p>{product.rating}</p>
-        </span>
-        <div onClick={toggleFavorite} className="like-btn">
-          {isFavorite ? <FcLike /> : <FaRegHeart />}
-        </div>
+        <p className="PriceRating2" >{datas.price}$</p>
+        <p className="PriceRating2" >⭐️{datas.rating}</p>
+        
       </span>
-      {/* </Link> */}
+    </Link>
+    <div className="Fav" onClick={toggleFavorite}>
+      {isFavorite ? <FcLike /> : <FaRegHeart />}
     </div>
+  </span>
+
   );
 };
 export default ProductCard;
