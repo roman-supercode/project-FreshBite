@@ -15,7 +15,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:9999/api/v1/auth/register",
+        "https://freshbite-server.up.railway.app/api/v1/auth/register",
         {
           method: "POST",
           headers: {

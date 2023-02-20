@@ -29,8 +29,7 @@
 
 }
 
-.sort-btn:active,
-.sort-btn:focus {
+.active {
     background: #40aa54;
     color: white;
 }
@@ -45,8 +44,7 @@
     margin: 0 2px;
 }
 
-.cat-btn:active,
-.cat-btn:focus {
+.active {
     background: #40aa54;
     color: white;
 }

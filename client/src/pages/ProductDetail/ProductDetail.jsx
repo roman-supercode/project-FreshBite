@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import "./ProductDetail.css";
@@ -10,6 +11,7 @@ function ProductDetail() {
   const { id } = useParams();
   const [detail, setDetail] = useState([]);
   const [Quantity, setQuantity] = useState(1);
+
   useEffect(() => {
     fetch(`https://freshbite-server.up.railway.app/api/v1/products/item/${id}`)
       .then((response) => {
@@ -70,5 +72,6 @@ function ProductDetail() {
   );
 
 }
+
 
 export default ProductDetail;

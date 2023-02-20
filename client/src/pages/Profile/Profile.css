@@ -1,4 +1,4 @@
-.profileContainer {
+.profile-main-container {
   /* margin-bottom: 8rem; */
   padding-bottom: 5rem;
   background-color: #f5f5ff;
@@ -68,9 +68,11 @@ article {
   transform: scale(1.05);
 }
 
-.topDiv {
-  display: flex;
+.top-header-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
-  gap: 5rem;
-  padding: 1rem 0.5rem;
+  gap: 3rem;
+  padding: 1.5rem 0.5rem;
+  justify-items: center;
 }

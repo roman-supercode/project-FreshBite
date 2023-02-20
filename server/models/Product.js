@@ -51,6 +51,10 @@ const ProductSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    inCard: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );
