@@ -17,7 +17,7 @@ export const NavBar = ({ page }) => {
         <img
           className="navLinkToHome"
           alt="home button"
-          src={page !== "home" ? homeUnclicked : homeClicked}
+          src={page !== "Home" ? homeUnclicked : homeClicked}
         />
       </Link>
       <Link to="/order-history">
