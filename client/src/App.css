@@ -10,7 +10,9 @@
   box-sizing: border-box;
   user-select: none;
   font-family: "Poppins-Regular";
+
 }
+
 .routeLink {
   width: 100%;
   justify-content: center;

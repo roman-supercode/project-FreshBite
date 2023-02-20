@@ -3,12 +3,13 @@ import './FilterCard.css';
 
 function FilterCard({ item }) {
   return (
+    
     <div className="TodayGroceryDealsCards">
     <span className="cardBilderContainer">
       <img className="cardBilder" src={item.url} alt="Bild"></img>
     </span>
     <span className="name">
-      <p>{item.name}</p>
+      <p>{item.name.slice(0,14)+"..."}</p>
     </span>
     <span className="PriceRating">
       <p>{item.price}$</p>
