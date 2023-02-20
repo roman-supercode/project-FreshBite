@@ -20,6 +20,7 @@ const Filter = () => {
         fetchProducts();
 
     }, []);
+    
     console.log(products);
 
     //duplicate aus category entfernen

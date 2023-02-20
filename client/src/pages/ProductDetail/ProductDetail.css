@@ -2,13 +2,14 @@
     border: solid .5px gray;
     display: flex;
     width: 100vw;
-    border-right:none ;
+    border-right: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 167, 0, 0.836);
 }
 
 .back {
     width: min-content;
     margin-right: 3rem;
-
 }
 
 .GDeals {
@@ -30,9 +31,8 @@
     align-items: center;
     flex-direction: column;
     border: solid 1px gray;
-    padding: 0 5%;
+    padding: 0  1rem;
     height: min-content;
-
 }
 
 .DetailPPage {
@@ -42,13 +42,15 @@
     flex-direction: column;
     margin-bottom: 10rem;
 }
-.imgContainer{
+
+.imgContainer {
     margin-top: .5rem;
     width: 100%;
     height: 100%;
 }
+
 .detailCard img {
-    width:100%;
+    width: 100%;
     border-radius: 1.5rem;
 }
 
@@ -64,12 +66,14 @@
     font-size: 40pt;
     text-align: center;
 }
-.PuT{
+
+.PuT {
     display: flex;
-justify-content: center;
-gap: 30%;
-align-items: center;
+    justify-content: center;
+    gap: 30%;
+    align-items: center;
 }
+
 .NameAndRating {
     display: flex;
     justify-content: center;
@@ -98,7 +102,7 @@ align-items: center;
 }
 
 .Q {
-   padding-top: 0.5rem;
+    padding-top: 0.5rem;
     color: rgb(113, 110, 110);
 }
 
@@ -147,24 +151,26 @@ align-items: center;
     width: 2rem;
     height: 2rem;
     border-radius: 100%;
-    font-size:20pt;
+    font-size: 20pt;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.zuLang{
+
+.zuLang {
     font-size: 25pt;
     font-weight: bolder;
 }
-.mittel{
+
+.mittel {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.Add{
-    position: relative;
 
+.Add {
+    position: relative;
     background-color: rgb(15, 224, 126);
     padding: .1rem;
     margin-top: .5rem;
@@ -172,6 +178,6 @@ align-items: center;
     width: 15rem;
     height: 3.5rem;
     border-radius: 1rem;
-    border: solid 1px ;
+    border: solid 1px;
     color: aliceblue;
 }

@@ -27,6 +27,12 @@ function ProductDetail() {
 
   let shopingCardPrice = detail?.price * Quantity;
 
+// import shopCard from "../../img/shopCard.svg";
+
+function ProductDetail() {
+  const [Quantity, setQuantity] = useState(shortCut.quantity);
+
+
   return (
     <div className="DetailPPage">
       <span className="obenC">

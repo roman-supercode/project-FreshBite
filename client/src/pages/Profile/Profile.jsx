@@ -1,24 +1,28 @@
 import "./Profile.css";
 import cameraIcon from "../../assets/camera-icon.svg";
 import GoBackButton from "../../components/GoBack/GoBackButton";
-// import { useAuth } from "../../context/AuthContext";
+import { RiLogoutCircleRLine } from "react-icons/ri";
+import { IconContext } from "react-icons/lib";
 import { useContext } from "react";
-import { useState } from "react";
-
-import { BiAlarmSnooze } from "react-icons/bi";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
+// import { BiAlarmSnooze } from "react-icons/bi";
 
 const Profile = () => {
   const { authData } = useContext(AuthContext);
   // console.log(authData.user.email);
-  // const { profileData, setProfileData } = useState();
 
   return (
-    <div className="profileContainer">
+    <div className="profile-main-container">
       <section className="topSection">
-        <div className="topDiv">
+        <div className="top-header-container">
           <GoBackButton />
           <h2>Mein Profil</h2>
+          <Link to="/login">
+            <IconContext.Provider value={{ className: "goBackIcon" }}>
+              <RiLogoutCircleRLine />
+            </IconContext.Provider>
+          </Link>
         </div>
         <div className="profile">
           <img
@@ -32,7 +36,9 @@ const Profile = () => {
         <article>
           <p className="fix">Name</p>
           <p className="variabel">
-            {authData?.user?.firstName + authData?.user?.lastName}
+            {authData?.user?.firstName.replace(/^\w/, (c) => c.toUpperCase()) +
+              " " +
+              authData?.user?.lastName.replace(/^\w/, (c) => c.toUpperCase())}
           </p>
         </article>
         <article>
@@ -42,7 +48,7 @@ const Profile = () => {
         <article>
           <p className="fix">Lieferadresse</p>
           <p className="variabel">{"Buxtehuderstraße 1"}</p>
-          <p className="variabel">{"21073 Hamburg"}</p>
+          <p className="variabel">{"21614 Buxtehunde"}</p>
         </article>
         <article>
           <p className="fix">Telefonnummer</p>

@@ -17,6 +17,7 @@ function FilterCard({ item }) {
         </span>
       </div>
     </Link>
+
   );
 }
 
