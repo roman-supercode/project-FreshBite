@@ -78,9 +78,11 @@ const Filter = () => {
 
     return (
         <main>
-            <Link id="link" to="/filter" >
-                <MdArrowBackIos /><span>Filters</span>
-            </Link>
+          <span className="obenC">
+        <Link to="/Home" className="routeLink back">
+          <h1 className="pfeil">🏚️</h1>
+        </Link>
+        <h1 className="GDeals" > Filter</h1></span>
             <div className='ff-container' >
                 <div className='sort-container' >
                     <p>Sort By</p>

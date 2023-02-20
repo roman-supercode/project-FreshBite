@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Create from "./components/Create";
-// import Filter from './components/filter/Filter';
 import Filtered from "./components/filterpage/filtered";
 import FilterPage2 from "./components/filterpage/FilterPage2";
 import Home from "./pages/Home/Home";
@@ -49,7 +48,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
 
           <Route
-            path="/item"
+            path="/item/"
             element={
               <>
                 <ProductDetail />

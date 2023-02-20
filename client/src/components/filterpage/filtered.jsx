@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import FilterCard from '../filtercards/FilterCard';
 import Nomatch from './Nomatch';
 import FetchError from './FetchError';
@@ -21,9 +21,12 @@ const Filtered = () => {
                 <div className='filtered-container' >
                     {location.state.map((item, index) => {
                         return (
+                            <Link   className="TodayGroceryDealsCards "
+                            to={`/item/${item._id}`}>
                             <div key={index} >
                                 <FilterCard item={item} />
                             </div>
+                            </Link>
                         );
                     })
                     }
