@@ -12,7 +12,12 @@ const Filtered = () => {
 
   return (
     <main>
-      <GoBackButton />
+  <span className="obenC">
+
+        <h1 className="GDeals" ><GoBackButton /> </h1>
+        <Link to="/Home" className="routeLink back">
+        </Link></span>
+        
       {location.state.length === 0 && <Nomatch />}
       {!location.state && <FetchError />}
       {location.state && (
