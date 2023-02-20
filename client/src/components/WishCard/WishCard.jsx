@@ -1,37 +1,43 @@
 import star from "../../assets/star.svg";
-import trash from "../../assets/trash.svg";
+import { FcLike } from "react-icons/fc";
+import { FaRegHeart } from "react-icons/fa";
 import check from "../../assets/check.svg";
 import uncheck from "../../assets/uncheck.svg";
 import "./WishCard.css";
 import { useState } from "react";
+import { IconContext } from "react-icons/lib";
 
-const WishCard = ({ product }) => {
-  const [status, setStatus] = useState(product.isFav);
-
+const WishCard = ({ product, handleRemoveItem }) => {
   return (
-    <div className="wishCard">
-      <div onClick={() => setStatus(!product.isFav)}>
-        <img src={status ? check : uncheck} />
-      </div>
-      <div className="wishImgContainer">
+    <div className="wish-card-container">
+      {/* <div onClick={() => handleRemoveItem(product._id)}> */}
+      {/* <img src={status ? check : uncheck} className="statusImg" alt="check" /> */}
+      {/* </div> */}
+      <div className="wish-card-img-container">
         <img src={product.url} alt={product.name} className="wishImg" />
       </div>
-      <div className="wishContainer">
-        <h2>{product.name}</h2>
+      <div className="wish-card-product-container">
         <div>
-          <p>
-            {product.packUnit}
-            {product.unit}
-          </p>
           <img src={star} alt="star icon" />
-          <p>
-            {product.rating} ({product.numReviews})
-          </p>
-          <div className="wishTrash">
-            <img src={trash} alt="trashcan icon" />
-          </div>
+          <span className="wishlist-rating-review">
+            {product.rating} ({product.numReviews + " Bewertungen"})
+          </span>
         </div>
-        <h4>{product.price}€</h4>
+        <h2>{product.name}</h2>
+
+        <span>
+          {product.packUnit + " "}
+          {product.unit}
+        </span>
+      </div>
+      <div
+        onClick={() => handleRemoveItem(product._id)}
+        className="wishlist-like-btn-container"
+      >
+        <IconContext.Provider value={{ className: "wishlist-like-btn" }}>
+          <FcLike />
+        </IconContext.Provider>
+        <h4 className="wishlist-price-tag">{product.price}€</h4>
       </div>
     </div>
   );
