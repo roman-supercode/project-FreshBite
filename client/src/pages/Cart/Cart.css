@@ -5,7 +5,19 @@ background-color: white;
     width: 8.5rem;
 }
 
-
+.change{
+    opacity: 0;
+}
+.DeleteAll{
+    margin-left: 7rem;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    background-color: inherit;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 15pt;
+}
 .card {
     margin: 1rem 0 1rem 1rem;
     display: flex;
@@ -70,4 +82,27 @@ font-size: 13pt;
 
 .mittelTeil {
     margin: 1rem;
+}
+
+
+
+
+.CheckoutContainer{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 90%;
+    bottom: 5rem;
+}
+.checkout{
+    background-color:rgb(27, 199, 36);
+    color: white;
+    font-weight: bolder;
+    font-size: 25pt;
+    border-radius: 1rem;
+    border: none;
+    left: 5%;
+    width: 100%;
+    position: relative;
+    justify-content: center;
 }

@@ -70,7 +70,7 @@
 .PuT {
     display: flex;
     justify-content: center;
-    gap: 30%;
+    gap: 20%;
     align-items: center;
 }
 
@@ -107,8 +107,8 @@
 }
 
 .PMBTN {
-    height: 4rem;
-    width: 4rem;
+    height: 3.5rem;
+    width: 3.5rem;
     padding: 2.5rem;
     font-size: 30pt;
     font-weight: bolder;
@@ -124,7 +124,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 /* .shopCard {

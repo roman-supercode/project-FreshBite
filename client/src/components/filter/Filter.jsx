@@ -5,6 +5,7 @@ import { BsFilterLeft } from 'react-icons/bs';
 
 // styles
 import './Filter.css';
+import { Link } from 'react-router-dom';
 
 
 const Filter = () => {
@@ -40,20 +41,20 @@ const Filter = () => {
         <main>
 
             <div className='search-container' >
-                <span>
+              <Link to={`/filterpage2`}  className="routeLink back" >  <span>
                     <BsFilterLeft className='filter-icon' />
-                </span>
+                </span></Link>
                 <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'left' }}  ></input>
             </div>
             <div className='button-container' >
                 <div>
                     <button className='filter-btn' onClick={e => { setCategoryFilter(e.target.value); }} >All</button>
                 </div>
-                <div>
+                <div className='btnContainer2'>
                     {
                         updatecat.map((item, index) => {
                             return (
-                                <button className='filter-btn' onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
+                                <button className='filter-btn2' onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
                                     {item[0]}
                                 </button>
                             );

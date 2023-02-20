@@ -5,10 +5,11 @@ import "./ProductDetail.css";
 
 
 function ProductDetail() {
-
+  const location = useLocation();
+  console.log(location);
   const { id } = useParams();
-  const [detail, setDetail] = useState();
-  const [Quantity, setQuantity] = useState();
+  const [detail, setDetail] = useState([]);
+  const [Quantity, setQuantity] = useState(1);
   useEffect(() => {
     fetch(`https://freshbite-server.up.railway.app/api/v1/products/item/${id}`)
       .then((response) => {
@@ -18,19 +19,18 @@ function ProductDetail() {
         setDetail(DetailRes);
         console.log(DetailRes);
       });
-
-  }, []);
-  if (!detail) {
-    return <h1>ScHmUtZ</h1>;
+  },[]);
+  if (detail.length === 0) {
+    return ;
   }
-  setQuantity(detail?.quantity);
+ 
   const R = detail?.numReviews;
   let shopingCardPrice = detail?.price * Quantity;
   return (
     <div className="DetailPPage">
       <span className="obenC">
         <Link to="/Home" className="routeLink back">
-          <h1 className="pfeil">🔙</h1>
+          <h1 className="pfeil">🏚️</h1>
         </Link>
         <h1 className="GDeals" > Grocery Deals</h1></span>
       <span className="detailCard">
@@ -40,9 +40,7 @@ function ProductDetail() {
           <h2 className="PRICE"> ${detail?.price}</h2></div>
         <h4 className="THINGnAME">{detail?.name}</h4>
         <span className="NameAndRating">
-
           <p className="RATING">
-
             ⭐️ {detail?.rating} {"  ( " + R + " ) Review"}
           </p>
         </span>
@@ -62,7 +60,7 @@ function ProductDetail() {
             id="P" className="PMBTN" >➕</button>
         </span>
         <span className="shopCard">
-          <Link /* state={datas} */ valueOf={Quantity} to={`/cart`}  > <button onClick={() => {
+          <Link state={detail}     to={`/cart`}   > <button onClick={() => {
             setQuantity(1);
           }} className="Add">Add to Cart <p className="shCardQuantity">{Quantity}</p></button> </Link>
         </span>

@@ -33,7 +33,7 @@ const Home = () => {
     return (
       <div className="HomePage">
         <span className="head">
-          <Link className="routeLink filterContainer" to="/filterpage2">
+          <Link className="routeLink filterContainer" to="/filter">
             <button className="FilterBtn"></button> <h1 className="
           GanzOben">Wilkommen</h1><p id="BenutzerName"></p>
           </Link>
@@ -52,7 +52,6 @@ const Home = () => {
         <h1 className="ueberschreift">Today Grocery Deals</h1>
         <span className="ZGDeals">
           {randomSelection.map((datas, i) => {
-
             return (
 <ProductCard datas={datas} key={i} />
             );
@@ -80,7 +79,7 @@ const Home = () => {
                 </span>
                 <span className="PriceRating">
                   <p className="oldPrice PriceRating2">{datas.price}$ </p>
-                  <p className="salePrice PriceRating2"> {Math.floor(datas.price) / 2}$</p>
+                  <p className="salePrice PriceRating2"> {Math.floor(datas.price) / 2 + .5}$</p>
                 </span>
               </Link>
             );
