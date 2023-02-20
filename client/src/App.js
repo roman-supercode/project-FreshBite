@@ -16,6 +16,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register.jsx";
 
+
 function App() {
   return (
     <div className="App">
@@ -40,9 +41,10 @@ function App() {
           <Route path="/create" element={<Create />} />
           <Route path="/filter" element={<Filter />} />
 
+
           <Route path="/filterpage2" element={<FilterPage2 />} />
           <Route path="/filtered" element={<Filtered />} />
-          
+
           <Route path="/item/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
 
