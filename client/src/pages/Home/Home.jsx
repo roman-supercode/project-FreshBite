@@ -6,7 +6,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 //import ProductCard from "../../components/ProductCard/ProductCard";
 const Home = () => {
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [data, setData] = useState([]);
   // const [isFavorite, setIsFavorite] = useState(data.fav);
   let randomSelection = [];
@@ -79,8 +79,7 @@ const Home = () => {
             // <ProductCard key={product._id} product={product} />
 
             <Link
-              state={datas}
-              to={`/item`}
+              to={`/item/${datas._id}`}
               className="TodayGroceryDealsCards"
               key={i}
             >
@@ -110,8 +109,7 @@ const Home = () => {
         {randomSelection2.map((datas, i) => {
           return (
             <Link
-              state={datas}
-              to={"/item"}
+              to={`/item/${datas._id}`}
               className="GroceryMemberDealsCards"
               key={i}
             >
