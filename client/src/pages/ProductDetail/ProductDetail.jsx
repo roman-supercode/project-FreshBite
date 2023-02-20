@@ -1,32 +1,49 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 import "./ProductDetail.css";
-// import shopCard from "../../img/shopCard.svg";
+
+
 
 function ProductDetail() {
-  const location = useLocation();
-  let shortCut = location.state;
-  const RandomRating = shortCut.numReviews;
-  const [Quantity, setQuantity] = useState(shortCut.quantity);
 
-  let shopingCardPrice = shortCut.price * Quantity;
+  const { id } = useParams();
+  const [detail, setDetail] = useState();
+  const [Quantity, setQuantity] = useState();
+  useEffect(() => {
+    fetch(`https://freshbite-server.up.railway.app/api/v1/products/item/${id}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((DetailRes) => {
+        setDetail(DetailRes);
+        console.log(DetailRes);
+      });
+
+  }, []);
+  if (!detail) {
+    return <h1>ScHmUtZ</h1>;
+  }
+  setQuantity(detail?.quantity);
+  const R = detail?.numReviews;
+  let shopingCardPrice = detail?.price * Quantity;
   return (
     <div className="DetailPPage">
       <span className="obenC">
         <Link to="/Home" className="routeLink back">
-          <h1 className="pfeil">🔙</h1>    </Link>
+          <h1 className="pfeil">🔙</h1>
+        </Link>
         <h1 className="GDeals" > Grocery Deals</h1></span>
       <span className="detailCard">
-      <span className=" imgContainer">  <img src={shortCut.url} alt={shortCut.name}></img></span>
-        <div className="PuT">  <p className="UNIT">{shortCut.quantity + shortCut.unit.toUpperCase()}</p>
-     
-        <h2 className="PRICE"> ${shortCut.price}</h2></div>
-        <h4 className="THINGnAME">{shortCut.name}</h4>
+        <span className=" imgContainer">  <img src={detail?.url} alt={detail?.name}></img></span>
+        <div className="PuT">  <p className="UNIT">{detail?.quantity + detail?.unit.toUpperCase()}</p>
+
+          <h2 className="PRICE"> ${detail?.price}</h2></div>
+        <h4 className="THINGnAME">{detail?.name}</h4>
         <span className="NameAndRating">
-          {" "}
+
           <p className="RATING">
-            {" "}
-            ⭐️ {shortCut.rating} {"  ( " + RandomRating + " ) Review"}
+
+            ⭐️ {detail?.rating} {"  ( " + R + " ) Review"}
           </p>
         </span>
       </span>
@@ -37,7 +54,7 @@ function ProductDetail() {
         }}
           id="M" className="PMBTN">➖</button>
           <span className="mittel">
-        <p className="zuLang">{Quantity}{shortCut.unit.toUpperCase()}</p>
+            <p className="zuLang">{Quantity}{detail?.unit.toUpperCase()}</p>
             <p>{"( " + shopingCardPrice.toFixed(2) + "$ )"}</p></span>
           <button onClick={() => {
             setQuantity(Quantity + 1);
@@ -45,14 +62,15 @@ function ProductDetail() {
             id="P" className="PMBTN" >➕</button>
         </span>
         <span className="shopCard">
-  <Link state={shortCut} valueOf={Quantity} to={`/cart`}  > <button onClick={() => {
-         setQuantity(1);
-       }} className="Add">Add to Cart <p className="shCardQuantity">{Quantity}</p></button> </Link>  
+          <Link /* state={datas} */ valueOf={Quantity} to={`/cart`}  > <button onClick={() => {
+            setQuantity(1);
+          }} className="Add">Add to Cart <p className="shCardQuantity">{Quantity}</p></button> </Link>
         </span>
 
       </span>
     </div>
   );
+
 }
 
 export default ProductDetail;

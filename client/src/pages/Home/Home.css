@@ -212,3 +212,8 @@
   text-align: center;
   font-family: monospace;
 }
+.Fav{
+  position: relative;
+top: -2.3rem;
+right: -6.4rem;
+}
