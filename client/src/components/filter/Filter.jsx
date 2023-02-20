@@ -6,7 +6,6 @@ import { BsFilterLeft } from 'react-icons/bs';
 
 // styles
 import './Filter.css';
-import { Link } from 'react-router-dom';
 
 
 const Filter = () => {

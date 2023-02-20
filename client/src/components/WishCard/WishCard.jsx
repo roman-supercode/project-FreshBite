@@ -1,8 +1,6 @@
 import star from "../../assets/star.svg";
 import { FcLike } from "react-icons/fc";
-import { FaRegHeart } from "react-icons/fa";
 import "./WishCard.css";
-import { useState } from "react";
 import { IconContext } from "react-icons/lib";
 
 const WishCard = ({ product, handleRemoveItem }) => {

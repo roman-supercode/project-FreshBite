@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, Toaster } from "react-hot-toast";
 import GoBackButton from "../GoBack/GoBackButton";
-import { BiShowAlt, BiHide } from "react-icons/bi";
 import { useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
