@@ -19,7 +19,8 @@ const Filter = () => {
         fetchProducts();
 
     }, []);
-    console.log(products[4]);
+
+    console.log(products);
 
     //duplicate aus category entfernen
     const dupcat = [...new Map(products.map((p) => [p.category]))];

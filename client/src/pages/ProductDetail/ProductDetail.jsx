@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./ProductDetail.css";
-import shopCard from "../../img/shopCard.svg";
+// import shopCard from "../../img/shopCard.svg";
 
 function ProductDetail() {
   const location = useLocation();
-  console.log(location);
   let shortCut = location.state;
-  const RandomRating = Math.floor(Math.random() * (100 + 699 + 1) + 10);
+  const RandomRating = shortCut.numReviews;
   const [Quantity, setQuantity] = useState(shortCut.quantity);
 
   let shopingCardPrice = shortCut.price * Quantity;
