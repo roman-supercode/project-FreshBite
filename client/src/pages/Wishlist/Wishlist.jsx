@@ -27,7 +27,8 @@ const Wishlist = () => {
 
   // Clear All
   const clearWishlist = async () => {
-    const url = "http://localhost:9999/api/v1/products/wishlist/clear";
+    const url =
+      "https://freshbite-server.up.railway.app/api/v1/products/wishlist/clear";
 
     try {
       const response = await fetch(url, {
@@ -57,7 +58,7 @@ const Wishlist = () => {
     const updatedWishlist = products.filter((item) => item._id !== id);
     setProducts(updatedWishlist);
 
-    const url = `http://localhost:9999/api/v1/products/wishlist/${id}`;
+    const url = `https://freshbite-server.up.railway.app/api/v1/products/${id}`;
     try {
       await fetch(url, {
         method: "PUT",
