@@ -35,7 +35,7 @@ const ProductCard = ({ datas }) => {
         <p className="name2">{datas.name}</p>
       </span>
       <span className="PriceRating">
-        <p className="PriceRating2" >{datas.price}$</p>
+        <p className="PriceRating2" >{datas.price}€</p>
         <p className="PriceRating2" >⭐️{datas.rating}</p>
         
       </span>

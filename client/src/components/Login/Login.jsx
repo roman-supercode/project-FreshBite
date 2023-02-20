@@ -9,22 +9,25 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
   const { setAuthData } = useContext(AuthContext);
-  
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://freshbite-server.up.railway.app/api/v1/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://freshbite-server.up.railway.app/api/v1/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const data = await response.json();
       //   console.log(data);
       console.log(data);
@@ -58,7 +61,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          type={showPassword ? "text" : "password"}
+          type="text"
           placeholder="Passwort"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

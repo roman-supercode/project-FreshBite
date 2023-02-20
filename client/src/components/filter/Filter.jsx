@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { fetchData } from '../fetchData';
 import FilterCard from '../filtercards/FilterCard';
@@ -10,7 +10,7 @@ import './Filter.css';
 
 const Filter = () => {
     const [products, setProducts] = useState([]);
-    const [cat, setCat] = useState("");
+    // const [cat, setCat] = useState("");
     useEffect(() => {
         const fetchProducts = async () => {
             const products = await fetchData("https://freshbite-server.up.railway.app/api/v1/products");
