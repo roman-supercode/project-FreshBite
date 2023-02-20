@@ -78,8 +78,8 @@ const Home = () => {
                   <p className="PriceRating2">⭐️{datas.rating}</p>
                 </span>
                 <span className="PriceRating">
-                  <p className="oldPrice PriceRating2">{datas.price}$ </p>
-                  <p className="salePrice PriceRating2"> {Math.floor(datas.price) / 2 + .5}$</p>
+                  <p className="oldPrice PriceRating2">{datas.price}€ </p>
+                  <p className="salePrice PriceRating2"> {Math.floor(datas.price) / 2 + .5}€</p>
 
                 </span>
               </Link>
