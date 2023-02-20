@@ -1,6 +1,7 @@
 import { FcLike } from "react-icons/fc";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
+import "./ProductCard.css";
 
 import { Link } from "react-router-dom";
 
@@ -21,7 +22,6 @@ const ProductCard = ({ datas }) => {
     }
   };
   return (
-  
     <span className="FAVSchmutz TodayGroceryDealsCards">
     <Link
        state={datas}
@@ -44,6 +44,7 @@ const ProductCard = ({ datas }) => {
       {isFavorite ? <FcLike /> : <FaRegHeart />}
     </div>
   </span>
+
   );
 };
 export default ProductCard;

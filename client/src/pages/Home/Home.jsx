@@ -9,6 +9,7 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 
 const Home = () => {
   const [data, setData] = useState([]);
+
   let randomSelection = [];
   let randomSelection2 = [];
 
@@ -17,6 +18,7 @@ const Home = () => {
     fetch("https://freshbite-server.up.railway.app/api/v1/products")
       .then((response) => response.json())
       .then((data) => setData(data));
+
   }, []);
 
 
@@ -46,6 +48,7 @@ const Home = () => {
               <img className="sale" src={zwanzigZ} alt="20% off" />
             </div>
           </div>
+
         </span>
 
 
@@ -58,6 +61,7 @@ const Home = () => {
             );
           })}
         </span>
+
 
         <img className="pommes" src={pommes} alt="Pommes"></img>
 
@@ -90,4 +94,5 @@ const Home = () => {
     );
   }
 };
+
 export default Home;

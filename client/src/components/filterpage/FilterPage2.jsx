@@ -84,9 +84,9 @@ const Filter = () => {
             <div className='ff-container' >
                 <div className='sort-container' >
                     <p>Sort By</p>
-                    <button className='sort-btn' value="lowest" onClick={(e) => setSortOrder(e.target.value)} >Lowest Price</button>
-                    <button className='sort-btn' value="highest" onClick={(e) => setSortOrder(e.target.value)} >Highest Price</button>
-                    <button className='sort-btn' value="best" onClick={(e) => setSortOrder(e.target.value)} >Best Rating</button>
+                    <button className='sort-btn' value="lowest" onClick={(e) => { setSortOrder(e.target.value); e.target.classList.toggle("active"); }} >Lowest Price</button>
+                    <button className='sort-btn' value="highest" onClick={(e) => { setSortOrder(e.target.value); e.target.classList.toggle("active"); }} >Highest Price</button>
+                    <button className='sort-btn' value="best" onClick={(e) => { setSortOrder(e.target.value); e.target.classList.toggle("active"); }} >Best Rating</button>
                 </div>
                 <div>
                     <button id="clear" onClick={handleClear} >All Clear</button>
@@ -120,7 +120,7 @@ const Filter = () => {
                 {
                     updatecat.map((item, index) => {
                         return (
-                            <button className='cat-btn' onClick={e => { setCategoryFilter(e.target.value); }} value={item[0]} key={index}>
+                            <button className='cat-btn' onClick={e => { setCategoryFilter(e.target.value); e.target.classList.toggle("active"); }} value={item[0]} key={index}>
                                 {item[0]}
                             </button>
                         );

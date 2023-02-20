@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import "./ProductDetail.css";
@@ -72,5 +73,6 @@ function ProductDetail() {
   );
 
 }
+
 
 export default ProductDetail;
