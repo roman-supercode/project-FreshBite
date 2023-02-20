@@ -11,11 +11,11 @@ const Wishlist = () => {
   // Get Wishlist
   useEffect(() => {
     const fetchWishlist = async () => {
-      const url = "http://localhost:9999/api/v1/products/wishlist";
-      // const railwayUrl =
-      //   "https://freshbite-server.up.railway.app/api/v1/products/wishlist";
+      // const url = "http://localhost:9999/api/v1/products/wishlist";
+      const railwayUrl =
+        "https://freshbite-server.up.railway.app/api/v1/products/wishlist";
       try {
-        const response = await fetch(url);
+        const response = await fetch(railwayUrl);
         const data = await response.json();
         setProducts(data);
       } catch (error) {

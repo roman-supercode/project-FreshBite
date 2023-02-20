@@ -10,6 +10,7 @@ function ProductDetail() {
   const { id } = useParams();
   const [detail, setDetail] = useState();
   const [Quantity, setQuantity] = useState();
+  
   useEffect(() => {
     fetch(`https://freshbite-server.up.railway.app/api/v1/products/item/${id}`)
       .then((response) => {
