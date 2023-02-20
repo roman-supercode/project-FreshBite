@@ -1,8 +1,6 @@
 import star from "../../assets/star.svg";
 import { FcLike } from "react-icons/fc";
 import { FaRegHeart } from "react-icons/fa";
-import check from "../../assets/check.svg";
-import uncheck from "../../assets/uncheck.svg";
 import "./WishCard.css";
 import { useState } from "react";
 import { IconContext } from "react-icons/lib";
@@ -10,9 +8,6 @@ import { IconContext } from "react-icons/lib";
 const WishCard = ({ product, handleRemoveItem }) => {
   return (
     <div className="wish-card-container">
-      {/* <div onClick={() => handleRemoveItem(product._id)}> */}
-      {/* <img src={status ? check : uncheck} className="statusImg" alt="check" /> */}
-      {/* </div> */}
       <div className="wish-card-img-container">
         <img src={product.url} alt={product.name} className="wishImg" />
       </div>

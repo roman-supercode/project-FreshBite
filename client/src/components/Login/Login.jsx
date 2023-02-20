@@ -19,7 +19,7 @@ const Login = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:9999/api/v1/auth/login", {
+      const response = await fetch("https://freshbite-server.up.railway.app/api/v1/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,10 +43,6 @@ const Login = () => {
     }
   };
 
-  //   const toggleShowPassword = () => {
-  //     setShowPassword(!showPassword);
-  //   };
-
   return (
     <div className="form-overlay">
       <div className="goBackTopContainer">
@@ -68,9 +64,6 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        {/* <div className="password-toggle-button" onClick={toggleShowPassword}>
-          {showPassword ? <BiHide /> : <BiShowAlt />}
-        </div> */}
         <button type="submit">Anmelden</button>
         <Link to="">Passwort vergessen?</Link>
 
