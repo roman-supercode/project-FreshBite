@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchData } from '../fetchData';
 import { Link, useNavigate } from 'react-router-dom';
 //import MultiRangeSlider from "multi-range-slider-react";
-import { MdArrowBackIos } from 'react-icons/md';
+// import { MdArrowBackIos } from 'react-icons/md';
 
 import './Slider.css';
 import './FilterPage2.css';

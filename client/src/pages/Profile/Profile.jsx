@@ -48,7 +48,7 @@ const Profile = () => {
         <article>
           <p className="fix">Lieferadresse</p>
           <p className="variabel">{"Buxtehuderstraße 1"}</p>
-          <p className="variabel">{"21614 Buxtehunde"}</p>
+          <p className="variabel">{"21614 Buxtehude"}</p>
         </article>
         <article>
           <p className="fix">Telefonnummer</p>

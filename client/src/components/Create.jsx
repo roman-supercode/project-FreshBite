@@ -50,12 +50,11 @@ const Create = () => {
     };
 
     console.log(item);
-    const url = "http://localhost:9999/api/v1/products";
     const railwayUrl =
       "https://freshbite-server.up.railway.app/api/v1/products";
 
     try {
-      const backendResponse = await fetch(railwayUrl, {
+      await fetch(railwayUrl, {
         method: "POST",
         headers: {
           "content-type": "application/json",
